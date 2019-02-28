@@ -114,7 +114,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Dialogs\GreetingDialog.cs" />
-    <Compile Include="Dialogs\LUISDialog.cs" />
     <Compile Include="Dialogs\PizzaBotDialog.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

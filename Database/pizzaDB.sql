@@ -6,7 +6,7 @@ CREATE TABLE `user` (
     `username` VARCHAR(14),
     `password` VARCHAR(14),
     `email` VARCHAR(14),
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`user_id`)
 );
 
 CREATE TABLE `credit_card` (
@@ -14,7 +14,7 @@ CREATE TABLE `credit_card` (
     `name` VARCHAR(60),
     `number` VARCHAR(20),
     `expiration` DATE,
-    PRIMARY KEY (`id`),
+    PRIMARY KEY (`cc_id`),
     UNIQUE (`name` , `number`)
 );
 
@@ -28,7 +28,7 @@ CREATE TABLE `user_order` (
     `user_id` INTEGER,
     `cc_id` INTEGER,
     `total_price` DOUBLE,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`user_order_id`)
 );
 
 CREATE TABLE `user_to_order` (
@@ -44,7 +44,7 @@ CREATE TABLE `pizzas` (
     `topping_2` VARCHAR(20),
     `topping_3` VARCHAR(20),
     `topping_4` VARCHAR(20),
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`pizza_id`)
 );
 
 CREATE TABLE `user_pizzas` (

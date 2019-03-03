@@ -92,11 +92,11 @@ body{
 }
 
 .bot .chat-message {
-  background: #aa2252;
+  background: #842124;
 }
 
 .user .chat-message {
-  background: #d89eb2;
+  background: #494344;
   order: -1;
 }
 
@@ -133,11 +133,11 @@ body{
 }
 
 .chat-form button {
-  background: #a34465;
+  background: #FF0004;
   padding: 5px 15px;
   font-size: 30px;
   color: #fff;
-  border: none:
+  border: none;
   margin: 0 10px;
   border-radius: 0 3px 0 #0eb2c1;
   cursor: pointer;

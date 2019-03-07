@@ -40,3 +40,7 @@ C:\Users\mimi\source\repos\Pizzabot\Pizzabot\obj\Debug\Pizzabot.csproj.CoreCompi
 C:\Users\mimi\source\repos\Pizzabot\Pizzabot\obj\Debug\Pizzabot.csproj.CopyComplete
 C:\Users\mimi\source\repos\Pizzabot\Pizzabot\obj\Debug\Bot Application.dll
 C:\Users\mimi\source\repos\Pizzabot\Pizzabot\obj\Debug\Bot Application.pdb
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\Chatbot Application\Pizzabot\obj\Debug\Pizzabot.csprojAssemblyReference.cache
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\Chatbot Application\Pizzabot\obj\Debug\Pizzabot.csproj.CoreCompileInputs.cache
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\Chatbot Application\Pizzabot\obj\Debug\Bot Application.dll
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\Chatbot Application\Pizzabot\obj\Debug\Bot Application.pdb

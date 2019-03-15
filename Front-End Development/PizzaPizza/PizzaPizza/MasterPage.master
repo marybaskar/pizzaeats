@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Home</title>
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="split left">
+
+            <a href="login.html">
+  		        <img src="img/login_2.png" alt="">
+            </a>
+		        <h2>Sign-in</h2>
+		        <a href="checkout.html">
+			        <img src="img/shopping-cart2.png" alt="">
+		        </a>
+	          <h2>Check-Out</h2>
+
+        </div>
+
+
+	<div class="split right">
+		<div class="chatbox">
+
+          <div class="chatlogs">
+
+              <div class="chat bot">
+                <div class="user-photo"><img src="img/chat-bot.png"></div>
+                <p class="chat-message">How can I help you</p>
+              </div>
+              <div class="chat user">
+                <p class="chat-message">I want a pizza</p>
+              </div>
+              <div class="chat bot">
+                <div class="user-photo"><img src="img/chat-bot.png"></div>
+                <p class="chat-message">What kind of pizza would you like?</p>
+              </div>
+              <div class="chat user">
+                <p class="chat-message">The Pizza kind</p>
+              </div>
+              <div class="chat bot">
+                <div class="user-photo"><img src="img/chat-bot.png"></div>
+                <p class="chat-message">What kind of pizza would you like?</p>
+              </div>
+              <div class="chat user">
+                <p class="chat-message">What do you have?</p>
+              </div>
+              <div class="chat bot">
+                <div class="user-photo"><img src="img/chat-bot.png"></div>
+                <p class="chat-message">We have Pepperoni, Barbeque, Cheese, and Hawaiian Pizza</p>
+              </div>
+          </div>
+
+          <div class="chat-form">
+              <textarea></textarea>
+              <button>Send</button>
+          </div>
+
+	   </div>
+     </div>
+
+
+    </form>
+</body>
+</html>

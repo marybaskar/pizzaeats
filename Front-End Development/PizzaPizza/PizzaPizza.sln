@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PizzaPizza", "PizzaPizza\", "{714505EE-2CB5-4057-ADD2-48A0932E4034}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52299"
+		Debug.AspNetCompiler.PhysicalPath = "PizzaPizza\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52299\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52299"
+		Release.AspNetCompiler.PhysicalPath = "PizzaPizza\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52299\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "52299"
+		SlnRelativePath = "PizzaPizza\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{714505EE-2CB5-4057-ADD2-48A0932E4034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714505EE-2CB5-4057-ADD2-48A0932E4034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A5BAF5D-9B7A-4D91-ACC5-212808EDD29E}
+	EndGlobalSection
+EndGlobal

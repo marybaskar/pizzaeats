@@ -136,7 +136,9 @@
     <Content Include="Content\img\g-icon.png" />
     <Content Include="Content\img\pizza-icon.png" />
     <Content Include="Content\img\pizza-logo.png" />
-    <Content Include="Content\img\Pizza.png" />
+    <Content Include="Content\img\pizza.png" />
+    <Content Include="Content\img\shopping-cart.png" />
+    <Content Include="Content\img\Side-Login.png" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -168,6 +170,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="_layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -18,8 +18,8 @@ body {
 
 .left {
     left: 0;
-    background-color: blue;
-    background-image: url(img/pizza.png)
+    background-color: red;
+    background-image: url(img/bg_option3.png)
 }
 
 .right {

@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\img\bg_option3.png" />
+    <Content Include="Content\img\bg_option4.png" />
     <Content Include="Content\img\g-icon.png" />
     <Content Include="Content\img\pizza-icon.png" />
     <Content Include="Content\img\pizza-logo.png" />

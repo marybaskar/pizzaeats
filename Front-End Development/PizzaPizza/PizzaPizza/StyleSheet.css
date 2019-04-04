@@ -15,7 +15,7 @@
 
 .left {
     left: 0;
-    background-image: url(../img/bg_option4);
+    background-image: url(../img/bg_option6.png);
     background-color: #ffc691;
 }
 
@@ -131,7 +131,7 @@
         }
 
     .chat-form button {
-        background: #ff7d04
+        background: #ff7d04;
         padding: 5px 15px;
         font-size: 30px;
         color: #fff;

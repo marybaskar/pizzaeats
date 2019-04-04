@@ -14,11 +14,11 @@
         <div class="split left">
 
             <a href="login.html">
-  		        <img src="img/login_2.png" alt="">
+  		        <img src="img/vector-signin.png" alt="">
             </a>
 		        <h2>Sign-in</h2>
 		        <a href="checkout.html">
-			        <img src="img/shopping-cart2.png" alt="">
+			        <img src="img/vector-checkout.png" alt="">
 		        </a>
 	          <h2>Check-Out</h2>
 

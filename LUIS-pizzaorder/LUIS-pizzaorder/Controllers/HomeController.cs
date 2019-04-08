@@ -18,10 +18,9 @@ namespace LUISPizzaOrder.Controllers
                 {
 
                     LUIS objLUISResult = await QueryLUIS(searchString);
-                    if (objLUISResult.intents == "pizzaorderOrder")
-                    {
+                    LUIS iLUISResult = await QueryLUIS(searchString);
 
-                    }
+                 
 
                     foreach (var item in objLUISResult.entities)
                     {
@@ -29,6 +28,8 @@ namespace LUISPizzaOrder.Controllers
                         {
                             Return.Size = item.entity;
                         }
+                        
+                        
                         if (item.type == "topping")
                         {
                             Return.Topping = item.entity;
@@ -41,7 +42,17 @@ namespace LUISPizzaOrder.Controllers
                         {
                             Return.Nosize = ("enter size");
                         }
+                        if (item.type != "builtin.number")
+                        {
+                            Return.Nonum = ("enter number");
+                        }
+                        if (item.type != "topping")
+                        {
+                            Return.Notopping = ("enter topping");
+                        }
+                        
                     }
+                    Console.Clear();
                 }
                 return View(Return);
             }

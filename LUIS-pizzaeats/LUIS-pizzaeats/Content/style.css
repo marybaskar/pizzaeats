@@ -186,22 +186,6 @@ body {
         text-align: center;
     }
 
-.signuperror {
-    padding-top: 14px;
-    font-family: arial;
-    font-size: 16px;
-    color: red;
-    text-align: center;
-}
-
-.signupsuccess {
-    padding-top: 14px;
-    font-family: arial;
-    font-size: 16px;
-    color: green;
-    text-align: center;
-}
-
 /*login.php*/
 
 .login {

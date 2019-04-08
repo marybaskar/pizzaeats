@@ -28,8 +28,8 @@ namespace LUISPizzaOrder.Controllers
                         {
                             Return.Size = item.entity;
                         }
-                        
-                        
+                        Console.Clear();
+
                         if (item.type == "topping")
                         {
                             Return.Topping = item.entity;

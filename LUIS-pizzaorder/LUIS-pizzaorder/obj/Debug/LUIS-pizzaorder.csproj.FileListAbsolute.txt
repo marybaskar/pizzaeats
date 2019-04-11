@@ -211,9 +211,14 @@ C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-piz
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\roslyn\VBCSCompiler.exe
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\Antlr3.Runtime.dll
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\EntityFramework.dll
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\EntityFramework.SqlServer.dll
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\Microsoft.AspNet.TelemetryCorrelation.dll
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Data.dll
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Data.Entity.EF6.dll
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Web.dll
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\Newtonsoft.Json.dll
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\System.Diagnostics.DiagnosticSource.dll
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\System.Web.Helpers.dll
@@ -224,6 +229,8 @@ C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-piz
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\System.Web.WebPages.dll
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\System.Web.WebPages.Razor.dll
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\WebGrease.dll
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\EntityFramework.xml
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\EntityFramework.SqlServer.xml
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\Newtonsoft.Json.pdb
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\Newtonsoft.Json.xml
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\System.Web.Helpers.xml

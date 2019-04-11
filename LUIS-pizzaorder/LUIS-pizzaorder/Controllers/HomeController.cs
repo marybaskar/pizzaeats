@@ -5,55 +5,68 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Configuration;
 namespace LUISPizzaOrder.Controllers
-{
+{   
     public class HomeController : Controller
     {
-        #region public async Task<ActionResult> Index(string searchString)
-        public async Task<ActionResult> Index(string searchString)
+        #region public async Task<ActionResult> Index(string String)
+        public async Task<ActionResult> Index(string String)
         {
             Query Return = new Query();
             try
             {
-                if (searchString != null)
+                if (String != null)
                 {
 
-                    LUIS objLUISResult = await QueryLUIS(searchString);
-                    LUIS iLUISResult = await QueryLUIS(searchString);
+                    LUIS objLUISResult = await QueryLUIS(String);
+                    LUIS iLUISResult = await QueryLUIS(String);
+                    foreach (var i in iLUISResult.intents)
+                    {    if (i.intent == "Greeting")
+                        { 
+                            Return.Greeting = ("Hello this pizzaeats how can i help you");
 
-                 
+                        }
+                        else if (i.intent == "pizzaOrder")
+                        {
+                            foreach (var item in objLUISResult.entities)
+                            {
+                                if (item.type == "size")
+                                {
+                                    Return.Size = item.entity;
+                                }
+                                
 
-                    foreach (var item in objLUISResult.entities)
-                    {
-                        if (item.type == "size")
-                        {
-                            Return.Size = item.entity;
-                        }
-                        Console.Clear();
+                                if (item.type == "topping")
+                                {
+                                    Return.Topping = item.entity;
+                                }
+                                
 
-                        if (item.type == "topping")
-                        {
-                            Return.Topping = item.entity;
+                                if (item.type == "builtin.number")
+                                {
+                                    Return.Number = item.entity;
+                                }
+
+                                
+
+
+                            }
                         }
-                        if (item.type == "builtin.number")
+                        else if (i.intent == "None")
                         {
-                            Return.Number = item.entity;
+                            Return.None = ("sorry i don't understand");
+
+
                         }
-                        if (item.type != "size")
-                        {
-                            Return.Nosize = ("enter size");
+                               
+
                         }
-                        if (item.type != "builtin.number")
-                        {
-                            Return.Nonum = ("enter number");
-                        }
-                        if (item.type != "topping")
-                        {
-                            Return.Notopping = ("enter topping");
-                        }
-                        
+
                     }
-                    Console.Clear();
-                }
+
+
+                       
+                    
+                
                 return View(Return);
             }
             catch (Exception ex)

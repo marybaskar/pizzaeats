@@ -9,7 +9,7 @@
     {
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                @Html.TextBox("SearchString", "",
+                @Html.TextBox("String", "",
                new { style = "width: 500px;" }) <input type="submit" value="chat" />
             </div>
         </div>
@@ -38,27 +38,20 @@
            new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
+  
     <div class="form-group">
-        @Html.LabelFor(model => model.Nosize,
+        @Html.LabelFor(model => model.Greeting,
        htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DisplayFor(model => model.Nosize,
+            @Html.DisplayFor(model => model.Greeting,
            new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.Nonum,
+        @Html.LabelFor(model => model.None,
        htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DisplayFor(model => model.Nonum,
-           new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.Notopping,
-       htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.Notopping,
+            @Html.DisplayFor(model => model.None,
            new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>

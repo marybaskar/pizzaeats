@@ -18,51 +18,36 @@ namespace LUISPizzaOrder.Controllers
                 {
 
                     LUIS objLUISResult = await QueryLUIS(String);
-                    LUIS iLUISResult = await QueryLUIS(String);
-                    foreach (var i in iLUISResult.intents)
-                    {    if (i.intent == "Greeting")
-                        { 
-                            Return.Greeting = ("Hello this pizzaeats how can i help you");
+                    
 
-                        }
-                        else if (i.intent == "pizzaOrder")
-                        {
+                    
                             foreach (var item in objLUISResult.entities)
                             {
-                                if (item.type == "size")
+                                
+                                 if (item.type == "size")
                                 {
                                     Return.Size = item.entity;
                                 }
-                                
-
+                                                                                                  
                                 if (item.type == "topping")
                                 {
                                     Return.Topping = item.entity;
                                 }
-                                
+                        
 
                                 if (item.type == "builtin.number")
                                 {
-                                    Return.Number = item.entity;
+                                  Return.Number = item.entity;
                                 }
 
-                                
-
-
+                        
                             }
+                    Console.Clear();
                         }
-                        else if (i.intent == "None")
-                        {
-                            Return.None = ("sorry i don't understand");
+                        
 
-
-                        }
-                               
-
-                        }
-
-                    }
-
+                    
+                         
 
                        
                     

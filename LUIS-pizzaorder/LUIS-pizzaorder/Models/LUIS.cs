@@ -41,13 +41,9 @@ namespace JSONUtils
     {
         public string Size { get; set; }
         public string Topping { get; set; }
+
         public string Number { get; set; }
-        public string Nosize { get; set; }
-        public string Nonum { get; set; }
-        public string Notopping { get; set; }
-        public string Greeting { get; set; }
-        public string None { get; set; }
-        public string Result { get; set; }
+        
         //public string Greeting { get; set; }
     }
 

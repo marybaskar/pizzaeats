@@ -242,3 +242,15 @@ C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-piz
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.csproj.CopyComplete
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.dll
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.pdb
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\EntityFramework.dll
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\EntityFramework.SqlServer.dll
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Data.dll
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Data.Entity.EF5.dll
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Data.Entity.EF6.dll
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Web.dll
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\EntityFramework.xml
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\EntityFramework.SqlServer.xml
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Data.xml
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Data.Entity.EF5.xml
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Data.Entity.EF6.xml
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Web.xml

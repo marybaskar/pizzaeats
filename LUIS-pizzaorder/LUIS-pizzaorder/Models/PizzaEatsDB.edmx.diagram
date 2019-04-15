@@ -4,8 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a56aa92df28340398d65ad7bc3ff7f69" Name="Diagram1">
-        <EntityTypeShape EntityType="pizzadbModel.user" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="19b28847d2d4409db7371fd23b665acc" Name="Diagram1">
+        <EntityTypeShape EntityType="pizzadbModel.credit_card" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pizzadbModel.pizza" Width="1.5" PointX="4.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="pizzadbModel.size" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="pizzadbModel.topping" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pizzadbModel.user" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pizzadbModel.user_order_user_cc" Width="1.5" PointX="6.125" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="pizzadbModel.user_order_user_cc_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="pizzadbModel.pizzas_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="pizzadbModel.pizzas_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="pizzadbModel.pizzas_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="pizzadbModel.pizzas_ibfk_4" ManuallyRouted="false" />
+        <AssociationConnector Association="pizzadbModel.pizzas_ibfk_5" ManuallyRouted="false" />
+        <AssociationConnector Association="pizzadbModel.user_order_user_cc_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="pizzadbModel.user_order_to_pizzas" ManuallyRouted="false" />
+        <AssociationConnector Association="pizzadbModel.user_to_credit_card" ManuallyRouted="false" />
+        <AssociationConnector Association="pizzadbModel.user_to_order" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

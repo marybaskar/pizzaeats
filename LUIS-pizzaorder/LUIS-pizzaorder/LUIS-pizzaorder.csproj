@@ -145,7 +145,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\credit_card.cs">
+      <DependentUpon>PizzaEatsDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\LUIS.cs" />
+    <Compile Include="Models\pizza.cs">
+      <DependentUpon>PizzaEatsDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\PizzaEatsDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -161,7 +167,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PizzaEatsDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\size.cs">
+      <DependentUpon>PizzaEatsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\topping.cs">
+      <DependentUpon>PizzaEatsDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\user.cs">
+      <DependentUpon>PizzaEatsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\user_order_user_cc.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

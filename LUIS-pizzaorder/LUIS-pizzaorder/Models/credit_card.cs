@@ -12,33 +12,23 @@ namespace LUIS_pizzaorder.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class user
+    public partial class credit_card
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public user()
+        public credit_card()
         {
             this.user_order_user_cc = new HashSet<user_order_user_cc>();
-            this.pizzas = new HashSet<pizza>();
-            this.credit_card = new HashSet<credit_card>();
-            this.user_order_user_cc1 = new HashSet<user_order_user_cc>();
+            this.users = new HashSet<user>();
         }
     
-        public int user_id { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string firstname { get; set; }
-        public string lastname { get; set; }
-        public string address { get; set; }
-        public string phone { get; set; }
-        public string email { get; set; }
+        public int cc_id { get; set; }
+        public string name { get; set; }
+        public string number { get; set; }
+        public Nullable<System.DateTime> expiration { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<user_order_user_cc> user_order_user_cc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<pizza> pizzas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<credit_card> credit_card { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<user_order_user_cc> user_order_user_cc1 { get; set; }
+        public virtual ICollection<user> users { get; set; }
     }
 }

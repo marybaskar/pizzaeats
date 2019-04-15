@@ -25,6 +25,11 @@ namespace LUIS_pizzaorder.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<credit_card> credit_card { get; set; }
+        public virtual DbSet<pizza> pizzas { get; set; }
+        public virtual DbSet<size> sizes { get; set; }
+        public virtual DbSet<topping> toppings { get; set; }
         public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<user_order_user_cc> user_order_user_cc { get; set; }
     }
 }

@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    font-family: Arial;
+    color: white;
+}
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*register.php*/
+
+.form-signup {
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 200px;
+}
+
+    .form-signup input {
+        width: calc(100% - 30px);
+        height: 30px;
+        padding: 0 15px;
+        margin-bottom: 6px;
+        border: 1px solid #CCC;
+        border-radius: 4px;
+        background-color: #F6F6F6;
+        float: left;
+        font-family: arial;
+    }
+
+    .form-signup button {
+        display: block;
+        height: 40px;
+        padding: 0 10px;
+        margin: 0 auto;
+        border: none;
+        border-radius: 4px;
+        background-color: #333;
+        font-family: arial;
+        font-size: 13px;
+        color: #FFF;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+/*login.php*/
+
+.login {
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+}
+
+    .login form {
+        height: 100%;
+    }
+
+        .login form input {
+            height: 100%;
+            width: 160px;
+            padding: 0 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #F6F6F6;
+            float: left;
+            margin-left: 8px;
+            font-family: arial;
+        }
+
+        .login form button {
+            height: 100%;
+            padding: 0 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #333;
+            margin-left: 8px;
+            font-family: arial;
+            font-size: 13px;
+            color: #FFF;
+            text-transform: uppercase;
+            text-align: center;
+        }

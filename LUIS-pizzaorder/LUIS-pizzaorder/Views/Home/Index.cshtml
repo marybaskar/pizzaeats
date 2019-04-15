@@ -1,4 +1,5 @@
 ﻿@model JSONUtils.Query
+
 @{
     ViewBag.Title = "Index";
 }
@@ -9,25 +10,33 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @using (Html.BeginForm())
     {
-        <div class="form-group">
-            <div class="col-md-10">
 
-                <h1>Menu:</h1>
-                <div>
-                    <h2>Size:</h2>
-                    <li>small</li>
-                    <li>medium</li>
-                    <li>large</li>
-                </div>
-                <div class="form-inline" style="margin-right:-500px">
-                    <h2>Topping:</h2>
-                    <li>chicken</li>
-                    <li>olive</li>
-                    <li>mushroom</li>
-                </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <h1>Size</h1>
 
-            </div>
+            @Html.RadioButton("Size", "Small") Small
+            <br />
+
+            @Html.RadioButton("Size", "Medium") Medium
+            <br />
+
+            @Html.RadioButton("Size", "Large") large
+            <br />
         </div>
+        <div class="col-md-10">
+            <h1>Topping</h1>
+          
+            @Html.RadioButton("Topping", "spinach") spinach
+            <br />
+
+            @Html.RadioButton("Topping", "olive") olive
+            <br />
+
+            @Html.RadioButton("Topping", "onion") onion
+            <br />
+        </div>
+    </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 @Html.TextBox("String", "",

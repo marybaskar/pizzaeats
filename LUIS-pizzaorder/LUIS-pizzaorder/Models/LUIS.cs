@@ -41,13 +41,12 @@ namespace JSONUtils
     {
         public string Size { get; set; }
         public string Topping { get; set; }
-
         public string Number { get; set; }
         
         //public string Greeting { get; set; }
     }
 
-
+    
 
 }
 //namespace LUIS_pizzaorder.Models

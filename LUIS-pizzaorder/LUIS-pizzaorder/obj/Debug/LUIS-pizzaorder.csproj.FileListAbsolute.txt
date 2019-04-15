@@ -317,3 +317,10 @@ C:\Users\jaese\OneDrive\Documents\CS401\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorde
 C:\Users\jaese\OneDrive\Documents\CS401\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.csproj.CopyComplete
 C:\Users\jaese\OneDrive\Documents\CS401\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.dll
 C:\Users\jaese\OneDrive\Documents\CS401\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.pdb
+C:\Users\mimi\Documents\401PE\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\EntityFramework.dll
+C:\Users\mimi\Documents\401PE\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\EntityFramework.SqlServer.dll
+C:\Users\mimi\Documents\401PE\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Data.dll
+C:\Users\mimi\Documents\401PE\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Data.Entity.EF6.dll
+C:\Users\mimi\Documents\401PE\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\MySql.Web.dll
+C:\Users\mimi\Documents\401PE\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\EntityFramework.xml
+C:\Users\mimi\Documents\401PE\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\EntityFramework.SqlServer.xml

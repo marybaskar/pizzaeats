@@ -1,0 +1,28 @@
+﻿@model MvcAffablebean.Models.Product
+@Html.ActionLink("Go to the Store Index", "Index")
+@{
+    ViewBag.Title = "Album - " + Model.Productname;
+}
+<p>
+    <img alt="@Model.Productname"
+         src="@Model.ProductUrl" />
+</p>
+<div id="album-details">
+    <p>@Model.Productname
+
+    </p>
+    <p>
+        <em>Category:</em>
+        @Model.Category.Name
+    </p>
+    
+    <p>
+        <em>Price:</em>
+        @String.Format("{0:F}",
+Model.Price)
+    </p>
+    <p class="button">
+        @Html.ActionLink("Add to cart", "AddToCart",
+        "ShoppingCart", new { id = Model.ProductId }, "")
+    </p>
+</div>

@@ -1,0 +1,19 @@
+﻿@model List<MvcAffablebean.Models.Product>
+@{
+    ViewBag.Title = "ASP.NET MVC Affablebean Store";
+}
+<div id="promotion">
+</div>
+<h3><em>Fresh</em> off the grill</h3>
+<ul id="product-list">
+    @foreach (var product in Model)
+    {
+        <li>
+            <a href="@Url.Action("Details", "Store",
+                new { id = product.ProductId })">
+                <img alt="@product.Productname" src="@product.ProductUrl" />
+                <span>@product.Productname</span>
+            </a>
+        </li>
+    }
+</ul>

@@ -1,0 +1,20 @@
+﻿@model MvcAffablebean.Models.Category
+
+@{
+    ViewBag.Title = "Browse";
+}
+<div class="genre">
+    <h3><em>@Model.Name</em>Products</h3>
+    <ul id="product-list">
+        @foreach (var product in Model.products)
+        {
+            <li>
+                <a href="@Url.Action("Details",new { id = product.ProductId })">
+                    <img alt="@product.Productname"
+                         src="@product.ProductUrl" />
+                    <span>@product.Productname</span>
+            </a>
+        </li>
+        }
+    </ul>
+    </div>

@@ -26,21 +26,16 @@
         </div>
         <div class="col-md-10">
             <h1>Topping</h1>
-          
-            @Html.RadioButton("Topping", "spinach") spinach
-            <br />
 
-            @Html.RadioButton("Topping", "olive") olive
-            <br />
-
-            @Html.RadioButton("Topping", "onion") onion
-            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping, "Olive") Olive</label>
+            <label>@Html.RadioButtonFor(model => model.Topping, "Spinach")Spinach </label>
+            <label>@Html.RadioButtonFor(model => model.Topping, "Onion") Onion</label>
         </div>
     </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 @Html.TextBox("String", "",
-               new { style = "width: 500px;" }) <input type="submit" value="chat" />
+               new { style = "width: 500px;" }) <input type="submit" value="chat" />@ViewBag.Topping
             </div>
         </div>
     }

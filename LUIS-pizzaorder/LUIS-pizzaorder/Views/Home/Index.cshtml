@@ -5,8 +5,8 @@
 }
 <br />
 
-
 <div class="form-horizontal">
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @using (Html.BeginForm())
     {
@@ -25,17 +25,43 @@
             <br />
         </div>
         <div class="col-md-10">
-            <h1>Topping</h1>
+            <h1>cheese Topping</h1>
 
-            <label>@Html.RadioButtonFor(model => model.Topping, "Olive") Olive</label>
-            <label>@Html.RadioButtonFor(model => model.Topping, "Spinach")Spinach </label>
-            <label>@Html.RadioButtonFor(model => model.Topping, "Onion") Onion</label>
+            <label>@Html.RadioButtonFor(model => model.Topping, "Blue Cheese") Blue Cheese</label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping, "Feta Cheese")Feta Cheese </label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping, "Cheddar Cheese") Cheddar Cheese</label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping, "Mozzarella Cheese") Mozzarella Cheese</label>
+            <br />
+        </div>
+        <div class="col-md-10">
+            <h1>Chicken Topping</h1>
+
+            <label>@Html.RadioButtonFor(model => model.Topping2, "Chicken") Chicken</label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping2, "Turkey") Turkey </label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping2, "Shrimp") Shrimp </label>
+            <br />
+        </div>
+        <div class="col-md-10">
+            <h1>third Topping</h1>
+
+            <label>@Html.RadioButtonFor(model => model.Topping3, "Olive") Olive</label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping3, "Onion") Onion </label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping3, "Mushrooms") Mushrooms </label>
+            <br />
         </div>
     </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 @Html.TextBox("String", "",
                new { style = "width: 500px;" }) <input type="submit" value="chat" />
+            </div>
         </div>
     }
     <div class="form-group">
@@ -54,7 +80,22 @@
            new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
-   
+    <div class="form-group">
+        @Html.LabelFor(model => model.Topping2,
+       htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Topping2,
+           new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Topping3,
+       htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Topping3,
+           new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.Number,
        htmlAttributes: new { @class = "control-label col-md-2" })
@@ -63,8 +104,6 @@
            new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
-
-
 
 
 </div>

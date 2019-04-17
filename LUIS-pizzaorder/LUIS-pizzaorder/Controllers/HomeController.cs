@@ -16,10 +16,7 @@ namespace LUISPizzaOrder.Controllers
             {
                 if (String != null)
                 {
-
                     LUIS objLUISResult = await QueryLUIS(String);
-                    
-
                     
                             foreach (var item in objLUISResult.entities)
                             {
@@ -33,8 +30,16 @@ namespace LUISPizzaOrder.Controllers
                                 {
                                     Return.Topping = item.entity;
                                 }
-                        
 
+                                if (item.type == "topping2")
+                                {
+                                     Return.Topping2 = item.entity;
+                                 }
+                                if (item.type == "topping3")
+                                {
+                                    Return.Topping3 = item.entity;
+                                }
+                                
                                 if (item.type == "builtin.number")
                                 {
                                   Return.Number = item.entity;

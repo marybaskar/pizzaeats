@@ -12,17 +12,12 @@ namespace LUIS_pizzaorder.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class pizza
+    public partial class user_order
     {
+        public int user_id { get; set; }
         public int pizza_id { get; set; }
-        public string size { get; set; }
-        public Nullable<int> cheese_topping { get; set; }
-        public Nullable<int> meat_topping { get; set; }
-        public Nullable<int> veg_topping { get; set; }
+        public decimal total { get; set; }
     
-        public virtual size size1 { get; set; }
-        public virtual topping_cheese topping_cheese { get; set; }
-        public virtual topping_meat topping_meat { get; set; }
-        public virtual topping_veg topping_veg { get; set; }
+        public virtual user user { get; set; }
     }
 }

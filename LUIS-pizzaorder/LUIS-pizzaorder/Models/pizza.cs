@@ -14,15 +14,25 @@ namespace LUIS_pizzaorder.Models
     
     public partial class pizza
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public pizza()
+        {
+            this.users = new HashSet<user>();
+        }
+    
         public int pizza_id { get; set; }
         public string size { get; set; }
-        public Nullable<int> cheese_topping { get; set; }
-        public Nullable<int> meat_topping { get; set; }
-        public Nullable<int> veg_topping { get; set; }
+        public string topping_1 { get; set; }
+        public string topping_2 { get; set; }
+        public string topping_3 { get; set; }
+        public string topping_4 { get; set; }
     
         public virtual size size1 { get; set; }
-        public virtual topping_cheese topping_cheese { get; set; }
-        public virtual topping_meat topping_meat { get; set; }
-        public virtual topping_veg topping_veg { get; set; }
+        public virtual topping topping { get; set; }
+        public virtual topping topping1 { get; set; }
+        public virtual topping topping2 { get; set; }
+        public virtual topping topping3 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<user> users { get; set; }
     }
 }

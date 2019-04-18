@@ -17,6 +17,7 @@ namespace LUIS_pizzaorder.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public credit_card()
         {
+            this.user_order_user_cc = new HashSet<user_order_user_cc>();
             this.users = new HashSet<user>();
         }
     
@@ -25,6 +26,8 @@ namespace LUIS_pizzaorder.Models
         public string number { get; set; }
         public Nullable<System.DateTime> expiration { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<user_order_user_cc> user_order_user_cc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<user> users { get; set; }
     }

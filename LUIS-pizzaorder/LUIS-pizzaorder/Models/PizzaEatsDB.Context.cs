@@ -13,10 +13,10 @@ namespace LUIS_pizzaorder.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class pizzadbEntities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public pizzadbEntities()
+            : base("name=pizzadbEntities")
         {
         }
     
@@ -28,10 +28,8 @@ namespace LUIS_pizzaorder.Models
         public virtual DbSet<credit_card> credit_card { get; set; }
         public virtual DbSet<pizza> pizzas { get; set; }
         public virtual DbSet<size> sizes { get; set; }
-        public virtual DbSet<topping_cheese> topping_cheese { get; set; }
-        public virtual DbSet<topping_meat> topping_meat { get; set; }
-        public virtual DbSet<topping_veg> topping_veg { get; set; }
+        public virtual DbSet<topping> toppings { get; set; }
         public virtual DbSet<user> users { get; set; }
-        public virtual DbSet<user_order> user_order { get; set; }
+        public virtual DbSet<user_order_user_cc> user_order_user_cc { get; set; }
     }
 }

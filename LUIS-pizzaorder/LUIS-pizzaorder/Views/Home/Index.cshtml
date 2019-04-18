@@ -1,7 +1,7 @@
 ﻿@model JSONUtils.Query
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "PizzaEats";
 }
 <br />
 
@@ -12,7 +12,7 @@
     {
 
     <div class="row">
-        <div class="col-md-4">
+       <div class="col-md-4">
           <h1>Please Choose Pizza Size:</h1>
 
             @Html.RadioButton("Size", "Small") Small
@@ -40,6 +40,7 @@
             <br />
             <label>@Html.RadioButtonFor(model => model.Topping, "Mozzarella Cheese") Mozzarella Cheese</label>
             <br />
+
         </div>
         <div class="col-md-4">
             <h1>Chicken Topping:</h1>
@@ -66,6 +67,11 @@
             <div class="col-md-offset-2 col-md-10">
                 @Html.TextBox("String",null,
                new { style = "width: 900px;" }) <input type="submit" value="Enter" />
+                @if (Model.Empty)
+                {
+                    @Html.Label("please enter")
+                }
+
             </div>
         </div>
     }
@@ -109,9 +115,6 @@
            new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
-    @if (Model.Empty)
-        {
-        @Html.Label("please enter")
-    }
+    
 
 </div>

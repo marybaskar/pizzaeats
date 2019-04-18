@@ -5,15 +5,15 @@
 }
 <br />
 
-
 <div class="form-horizontal">
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @using (Html.BeginForm())
     {
 
-    <div class="form-group">
-        <div class="col-md-10">
-            <h1>Size</h1>
+    <div class="row">
+        <div class="col-md-4">
+          <h1>Please Choose Pizza Size:</h1>
 
             @Html.RadioButton("Size", "Small") Small
             <br />
@@ -24,23 +24,48 @@
             @Html.RadioButton("Size", "Large") large
             <br />
         </div>
-        <div class="col-md-10">
-            <h1>Topping</h1>
-          
-            @Html.RadioButton("Topping", "spinach") spinach
-            <br />
+    </div>  
+    <div class="row">
+        <h1>Please Choose one or more Topping:</h1>
+        
+        
+        <div class="col-md-4">
+            <h1>Cheese Topping:</h1>
 
-            @Html.RadioButton("Topping", "olive") olive
+            <label>@Html.RadioButtonFor(model => model.Topping, "Blue Cheese") Blue Cheese</label>
             <br />
+            <label>@Html.RadioButtonFor(model => model.Topping, "Feta Cheese") Feta Cheese </label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping, "Cheddar Cheese") Cheddar Cheese</label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping, "Mozzarella Cheese") Mozzarella Cheese</label>
+            <br />
+        </div>
+        <div class="col-md-4">
+            <h1>Chicken Topping:</h1>
 
-            @Html.RadioButton("Topping", "onion") onion
+            <label>@Html.RadioButtonFor(model => model.Topping2, "Chicken") Chicken</label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping2, "Turkey") Turkey </label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping2, "Shrimp") Shrimp </label>
+            <br />
+        </div>
+        <div class="col-md-4">
+            <h1>Third Topping:</h1>
+
+            <label>@Html.RadioButtonFor(model => model.Topping3, "Olive") Olive</label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping3, "Onion") Onion </label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping3, "Mushrooms") Mushrooms </label>
             <br />
         </div>
     </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                @Html.TextBox("String", "",
-               new { style = "width: 500px;" }) <input type="submit" value="chat" />
+                @Html.TextBox("String",null,
+               new { style = "width: 900px;" }) <input type="submit" value="Enter" />
             </div>
         </div>
     }
@@ -60,7 +85,22 @@
            new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
-   
+    <div class="form-group">
+        @Html.LabelFor(model => model.Topping2,
+       htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Topping2,
+           new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Topping3,
+       htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Topping3,
+           new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.Number,
        htmlAttributes: new { @class = "control-label col-md-2" })
@@ -69,8 +109,9 @@
            new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
-
-
-
+    @if (Model.Empty)
+        {
+        @Html.Label("please enter")
+    }
 
 </div>

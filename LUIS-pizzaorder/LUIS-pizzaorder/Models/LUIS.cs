@@ -36,7 +36,7 @@ namespace JSONUtils
         public IList<Intent> intents { get; set; }
         public IList<Entity> entities { get; set; }
     }
-
+    
     public class Query
     {
         public string Size { get; set; }
@@ -44,9 +44,12 @@ namespace JSONUtils
         public string Topping2 { get; set; }
         public string Topping3 { get; set; }
         public string Number { get; set; }
-        public string Nosize { get; set; }
-
-        //public string Greeting { get; set; }
+        public bool Empty
+        {
+            get { return (string.IsNullOrWhiteSpace(Size) || string.IsNullOrWhiteSpace(Topping) || string.IsNullOrWhiteSpace(Number)); }
+        }
+        
+       
     }
 
     

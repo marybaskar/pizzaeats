@@ -12,20 +12,19 @@ namespace LUIS_pizzaorder.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class credit_card
+    public partial class topping_meat
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public credit_card()
+        public topping_meat()
         {
-            this.users = new HashSet<user>();
+            this.pizzas = new HashSet<pizza>();
         }
     
-        public int cc_id { get; set; }
+        public int t_id { get; set; }
         public string name { get; set; }
-        public string number { get; set; }
-        public Nullable<System.DateTime> expiration { get; set; }
+        public Nullable<double> price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<user> users { get; set; }
+        public virtual ICollection<pizza> pizzas { get; set; }
     }
 }

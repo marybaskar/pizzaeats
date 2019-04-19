@@ -142,12 +142,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\credit_card.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Extended\user.cs" />
     <Compile Include="Models\LUIS.cs" />
     <Compile Include="Models\pizza.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
@@ -170,13 +172,19 @@
     <Compile Include="Models\size.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\topping.cs">
+    <Compile Include="Models\topping_cheese.cs">
+      <DependentUpon>PizzaEatsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\topping_meat.cs">
+      <DependentUpon>PizzaEatsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\topping_veg.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\user_order_user_cc.cs">
+    <Compile Include="Models\user_order.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -237,7 +245,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Form.cshtml" />
-    <Content Include="Views\Home\First.cshtml" />
+    <Content Include="Views\User\Registration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

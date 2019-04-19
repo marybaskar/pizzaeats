@@ -12,27 +12,19 @@ namespace LUIS_pizzaorder.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class topping
+    public partial class topping_veg
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public topping()
+        public topping_veg()
         {
             this.pizzas = new HashSet<pizza>();
-            this.pizzas1 = new HashSet<pizza>();
-            this.pizzas2 = new HashSet<pizza>();
-            this.pizzas3 = new HashSet<pizza>();
         }
     
+        public int t_id { get; set; }
         public string name { get; set; }
         public Nullable<double> price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<pizza> pizzas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<pizza> pizzas1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<pizza> pizzas2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<pizza> pizzas3 { get; set; }
     }
 }

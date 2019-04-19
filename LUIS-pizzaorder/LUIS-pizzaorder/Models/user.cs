@@ -17,10 +17,8 @@ namespace LUIS_pizzaorder.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public user()
         {
-            this.user_order_user_cc = new HashSet<user_order_user_cc>();
-            this.pizzas = new HashSet<pizza>();
+            this.user_order = new HashSet<user_order>();
             this.credit_card = new HashSet<credit_card>();
-            this.user_order_user_cc1 = new HashSet<user_order_user_cc>();
         }
     
         public int user_id { get; set; }
@@ -33,12 +31,8 @@ namespace LUIS_pizzaorder.Models
         public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<user_order_user_cc> user_order_user_cc { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<pizza> pizzas { get; set; }
+        public virtual ICollection<user_order> user_order { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<credit_card> credit_card { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<user_order_user_cc> user_order_user_cc1 { get; set; }
     }
 }

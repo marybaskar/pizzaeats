@@ -1,6 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="pizzadbModelStoreContainer" CdmEntityContainer="pizzadbEntities">
+  <EntityContainerMapping StorageEntityContainer="pizzadbModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="credit_card">
+      <EntityTypeMapping TypeName="pizzadbModel.credit_card">
+        <MappingFragment StoreEntitySet="credit_card">
+          <ScalarProperty Name="cc_id" ColumnName="cc_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="expiration" ColumnName="expiration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pizzas">
+      <EntityTypeMapping TypeName="pizzadbModel.pizza">
+        <MappingFragment StoreEntitySet="pizza">
+          <ScalarProperty Name="pizza_id" ColumnName="pizza_id" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="cheese_topping" ColumnName="cheese_topping" />
+          <ScalarProperty Name="meat_topping" ColumnName="meat_topping" />
+          <ScalarProperty Name="veg_topping" ColumnName="veg_topping" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sizes">
+      <EntityTypeMapping TypeName="pizzadbModel.size">
+        <MappingFragment StoreEntitySet="sizes">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="topping_cheese">
+      <EntityTypeMapping TypeName="pizzadbModel.topping_cheese">
+        <MappingFragment StoreEntitySet="topping_cheese">
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="topping_meat">
+      <EntityTypeMapping TypeName="pizzadbModel.topping_meat">
+        <MappingFragment StoreEntitySet="topping_meat">
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="topping_veg">
+      <EntityTypeMapping TypeName="pizzadbModel.topping_veg">
+        <MappingFragment StoreEntitySet="topping_veg">
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="users">
       <EntityTypeMapping TypeName="pizzadbModel.user">
         <MappingFragment StoreEntitySet="user">
@@ -15,5 +71,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="user_order">
+      <EntityTypeMapping TypeName="pizzadbModel.user_order">
+        <MappingFragment StoreEntitySet="user_order">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="pizza_id" ColumnName="pizza_id" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="user_to_credit_card" TypeName="pizzadbModel.user_to_credit_card" StoreEntitySet="user_to_credit_card">
+      <EndProperty Name="user">
+        <ScalarProperty Name="user_id" ColumnName="user_id" />
+      </EndProperty>
+      <EndProperty Name="credit_card">
+        <ScalarProperty Name="cc_id" ColumnName="cc_id" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

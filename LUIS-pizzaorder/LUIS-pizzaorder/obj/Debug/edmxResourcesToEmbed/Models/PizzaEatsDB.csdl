@@ -1,5 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="pizzadbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="credit_card">
+    <Key>
+      <PropertyRef Name="cc_id" />
+    </Key>
+    <Property Name="cc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="expiration" Type="DateTime" />
+    <NavigationProperty Name="users" Relationship="Self.user_to_credit_card" FromRole="credit_card" ToRole="user" />
+  </EntityType>
+  <EntityType Name="pizza">
+    <Key>
+      <PropertyRef Name="pizza_id" />
+    </Key>
+    <Property Name="pizza_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="size" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="cheese_topping" Type="Int32" />
+    <Property Name="meat_topping" Type="Int32" />
+    <Property Name="veg_topping" Type="Int32" />
+    <NavigationProperty Name="size1" Relationship="Self.pizza_ibfk_1" FromRole="pizza" ToRole="sizes" />
+    <NavigationProperty Name="topping_cheese" Relationship="Self.pizza_ibfk_2" FromRole="pizza" ToRole="topping_cheese" />
+    <NavigationProperty Name="topping_meat" Relationship="Self.pizza_ibfk_3" FromRole="pizza" ToRole="topping_meat" />
+    <NavigationProperty Name="topping_veg" Relationship="Self.pizza_ibfk_4" FromRole="pizza" ToRole="topping_veg" />
+  </EntityType>
+  <EntityType Name="size">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="price" Type="Double" />
+    <NavigationProperty Name="pizzas" Relationship="Self.pizza_ibfk_1" FromRole="sizes" ToRole="pizza" />
+  </EntityType>
+  <EntityType Name="topping_cheese">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="price" Type="Double" />
+    <NavigationProperty Name="pizzas" Relationship="Self.pizza_ibfk_2" FromRole="topping_cheese" ToRole="pizza" />
+  </EntityType>
+  <EntityType Name="topping_meat">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="price" Type="Double" />
+    <NavigationProperty Name="pizzas" Relationship="Self.pizza_ibfk_3" FromRole="topping_meat" ToRole="pizza" />
+  </EntityType>
+  <EntityType Name="topping_veg">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="price" Type="Double" />
+    <NavigationProperty Name="pizzas" Relationship="Self.pizza_ibfk_4" FromRole="topping_veg" ToRole="pizza" />
+  </EntityType>
   <EntityType Name="user">
     <Key>
       <PropertyRef Name="user_id" />
@@ -12,8 +71,116 @@
     <Property Name="address" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
     <Property Name="phone" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
     <Property Name="email" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="user_order" Relationship="Self.user_order_ibfk_1" FromRole="user" ToRole="user_order" />
+    <NavigationProperty Name="credit_card" Relationship="Self.user_to_credit_card" FromRole="user" ToRole="credit_card" />
   </EntityType>
-  <EntityContainer Name="pizzadbEntities" annotation:LazyLoadingEnabled="true">
+  <EntityType Name="user_order">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="pizza_id" />
+      <PropertyRef Name="total" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="pizza_id" Type="Int32" Nullable="false" />
+    <Property Name="total" Type="Decimal" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="Self.user_order_ibfk_1" FromRole="user_order" ToRole="user" />
+  </EntityType>
+  <Association Name="pizza_ibfk_1">
+    <End Role="sizes" Type="Self.size" Multiplicity="0..1" />
+    <End Role="pizza" Type="Self.pizza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sizes">
+        <PropertyRef Name="name" />
+      </Principal>
+      <Dependent Role="pizza">
+        <PropertyRef Name="size" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="pizza_ibfk_2">
+    <End Role="topping_cheese" Type="Self.topping_cheese" Multiplicity="0..1" />
+    <End Role="pizza" Type="Self.pizza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="topping_cheese">
+        <PropertyRef Name="t_id" />
+      </Principal>
+      <Dependent Role="pizza">
+        <PropertyRef Name="cheese_topping" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="pizza_ibfk_3">
+    <End Role="topping_meat" Type="Self.topping_meat" Multiplicity="0..1" />
+    <End Role="pizza" Type="Self.pizza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="topping_meat">
+        <PropertyRef Name="t_id" />
+      </Principal>
+      <Dependent Role="pizza">
+        <PropertyRef Name="meat_topping" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="pizza_ibfk_4">
+    <End Role="topping_veg" Type="Self.topping_veg" Multiplicity="0..1" />
+    <End Role="pizza" Type="Self.pizza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="topping_veg">
+        <PropertyRef Name="t_id" />
+      </Principal>
+      <Dependent Role="pizza">
+        <PropertyRef Name="veg_topping" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="user_order_ibfk_1">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="user_order" Type="Self.user_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="user_order">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="user_to_credit_card">
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <End Role="credit_card" Type="Self.credit_card" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="credit_card" EntityType="Self.credit_card" />
+    <EntitySet Name="pizzas" EntityType="Self.pizza" />
+    <EntitySet Name="sizes" EntityType="Self.size" />
+    <EntitySet Name="topping_cheese" EntityType="Self.topping_cheese" />
+    <EntitySet Name="topping_meat" EntityType="Self.topping_meat" />
+    <EntitySet Name="topping_veg" EntityType="Self.topping_veg" />
     <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="user_order" EntityType="Self.user_order" />
+    <AssociationSet Name="pizza_ibfk_1" Association="Self.pizza_ibfk_1">
+      <End Role="sizes" EntitySet="sizes" />
+      <End Role="pizza" EntitySet="pizzas" />
+    </AssociationSet>
+    <AssociationSet Name="pizza_ibfk_2" Association="Self.pizza_ibfk_2">
+      <End Role="topping_cheese" EntitySet="topping_cheese" />
+      <End Role="pizza" EntitySet="pizzas" />
+    </AssociationSet>
+    <AssociationSet Name="pizza_ibfk_3" Association="Self.pizza_ibfk_3">
+      <End Role="topping_meat" EntitySet="topping_meat" />
+      <End Role="pizza" EntitySet="pizzas" />
+    </AssociationSet>
+    <AssociationSet Name="pizza_ibfk_4" Association="Self.pizza_ibfk_4">
+      <End Role="topping_veg" EntitySet="topping_veg" />
+      <End Role="pizza" EntitySet="pizzas" />
+    </AssociationSet>
+    <AssociationSet Name="user_order_ibfk_1" Association="Self.user_order_ibfk_1">
+      <End Role="user" EntitySet="users" />
+      <End Role="user_order" EntitySet="user_order" />
+    </AssociationSet>
+    <AssociationSet Name="user_to_credit_card" Association="Self.user_to_credit_card">
+      <End Role="user" EntitySet="users" />
+      <End Role="credit_card" EntitySet="credit_card" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

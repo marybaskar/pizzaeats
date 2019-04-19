@@ -32,11 +32,11 @@ namespace LUIS_pizzaorder.Controllers
             }
             return View(newUser);
         }
-        [NonAction]
-        public bool usernameExists(string username)
-        {
-            using (
-        }
+       // [NonAction]
+       // public bool usernameExists(string username)
+       // {
+       //     using (
+       // }
 
         //Login
 

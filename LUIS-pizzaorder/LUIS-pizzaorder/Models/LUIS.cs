@@ -44,12 +44,18 @@ namespace JSONUtils
         public string Topping2 { get; set; }
         public string Topping3 { get; set; }
         public string Number { get; set; }
-        public bool Empty
+        public bool NoSize
         {
-            get { return (string.IsNullOrWhiteSpace(Size) || string.IsNullOrWhiteSpace(Topping) || string.IsNullOrWhiteSpace(Number)); }
+            get { return string.IsNullOrWhiteSpace(Size) ; }
         }
-        
-       
+        public bool NoTopping 
+        {
+            get { return (string.IsNullOrWhiteSpace(Topping) && string.IsNullOrWhiteSpace(Topping2) && string.IsNullOrWhiteSpace(Topping3)); }
+        }
+        public bool NoNumber
+        {
+            get { return string.IsNullOrWhiteSpace(Number); }
+        }
     }
 
     

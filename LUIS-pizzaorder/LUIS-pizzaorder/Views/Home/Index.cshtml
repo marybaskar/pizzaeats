@@ -11,72 +11,69 @@
     @using (Html.BeginForm())
     {
 
-    <div class="row">
-       <div class="col-md-4">
-          <h1>Please Choose Pizza Size:</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <h1>Please Choose Pizza Size:</h1>
 
-            @Html.RadioButton("Size", "Small") Small
-            <br />
+                @Html.RadioButton("Size", "Small") Small
+                <br />
 
-            @Html.RadioButton("Size", "Medium") Medium
-            <br />
+                @Html.RadioButton("Size", "Medium") Medium
+                <br />
 
-            @Html.RadioButton("Size", "Large") large
-            <br />
+                @Html.RadioButton("Size", "Large") large
+                <br />
+            </div>
         </div>
-    </div>  
-    <div class="row">
-        <h1>Please Choose one or more Topping:</h1>
-        
-        
-        <div class="col-md-4">
-            <h1>Cheese Topping:</h1>
+        <div class="row">
+            <h1>Please Choose one or more Topping:</h1>
 
-            <label>@Html.RadioButtonFor(model => model.Topping, "Blue Cheese") Blue Cheese</label>
-            <br />
-            <label>@Html.RadioButtonFor(model => model.Topping, "Feta") Feta </label>
-            <br />
-            <label>@Html.RadioButtonFor(model => model.Topping, "Pepper Jack") Pepper Jack</label>
-            <br />
-            <label>@Html.RadioButtonFor(model => model.Topping, "Mozzarella") Mozzarella</label>
-            <br />
 
+            <div class="col-md-4">
+                <h1>Cheese Topping:</h1>
+
+                <label>@Html.RadioButtonFor(model => model.Topping, "Blue Cheese") Blue Cheese</label>
+                <br />
+                <label>@Html.RadioButtonFor(model => model.Topping, "Feta") Feta </label>
+                <br />
+                <label>@Html.RadioButtonFor(model => model.Topping, "Pepper Jack") Pepper Jack</label>
+                <br />
+                <label>@Html.RadioButtonFor(model => model.Topping, "Mozzarella") Mozzarella</label>
+                <br />
+
+            </div>
+            <div class="col-md-4">
+                <h1>Meat Topping:</h1>
+
+                <label>@Html.RadioButtonFor(model => model.Topping2, "Chicken") Chicken</label>
+                <br />
+                <label>@Html.RadioButtonFor(model => model.Topping2, "Turkey") Turkey </label>
+                <br />
+                <label>@Html.RadioButtonFor(model => model.Topping2, "Shrimp") Shrimp </label>
+                <br />
+                <label>@Html.RadioButtonFor(model => model.Topping2, "Steak") Steak </label>
+                <br />
+                <label>@Html.RadioButtonFor(model => model.Topping2, "Lamb") Lamb </label>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <h1>Third Topping:</h1>
+
+                <label>@Html.RadioButtonFor(model => model.Topping3, "Olives") Olives</label>
+                <br />
+                <label>@Html.RadioButtonFor(model => model.Topping3, "Peppers") Peppers </label>
+                <br />
+                <label>@Html.RadioButtonFor(model => model.Topping3, "Mushrooms") Mushrooms </label>
+                <br />
+                <label>@Html.RadioButtonFor(model => model.Topping3, "Spinach") Spinach </label>
+                <br />
+            </div>
         </div>
-        <div class="col-md-4">
-            <h1>Meat Topping:</h1>
-
-            <label>@Html.RadioButtonFor(model => model.Topping2, "Chicken") Chicken</label>
-            <br />
-            <label>@Html.RadioButtonFor(model => model.Topping2, "Turkey") Turkey </label>
-            <br />
-            <label>@Html.RadioButtonFor(model => model.Topping2, "Shrimp") Shrimp </label>
-            <br />
-            <label>@Html.RadioButtonFor(model => model.Topping2, "Steak") Steak </label>
-            <br />
-            <label>@Html.RadioButtonFor(model => model.Topping2, "Lamb") Lamb </label>
-            <br />
-        </div>
-        <div class="col-md-4">
-            <h1>Third Topping:</h1>
-
-            <label>@Html.RadioButtonFor(model => model.Topping3, "Olives") Olives</label>
-            <br />
-            <label>@Html.RadioButtonFor(model => model.Topping3, "Peppers") Peppers </label>
-            <br />
-            <label>@Html.RadioButtonFor(model => model.Topping3, "Mushrooms") Mushrooms </label>
-            <br />
-            <label>@Html.RadioButtonFor(model => model.Topping3, "Spinach") Spinach </label>
-            <br />
-        </div>
-    </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 @Html.TextBox("String",null,
-               new { style = "width: 900px;" }) <input type="submit" value="Enter" /> 
-                @if (Model.Empty)
-                {
-                    @Html.Label("please enter")
-                }
+               new { style = "width: 900px;" }) <input type="submit" value="Enter" />
+
 
             </div>
         </div>
@@ -121,6 +118,16 @@
            new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
-    
-
+    @if (Model.NoSize)
+    {
+        @Html.Label("please enter size")
+    }
+    @if (Model.NoNumber)
+    {
+        @Html.Label("please enter Number")
+    }
+    @if (Model.NoTopping )
+    {
+        @Html.Label("please enter Topping")
+    }
 </div>

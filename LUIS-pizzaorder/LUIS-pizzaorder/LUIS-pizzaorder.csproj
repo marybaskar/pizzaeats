@@ -143,7 +143,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Crypto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -155,7 +154,6 @@
     <Compile Include="Models\pizza.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserContext.cs" />
     <Compile Include="Models\PizzaEatsDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -186,7 +184,6 @@
     <Compile Include="Models\user.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\user_order.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
@@ -197,6 +194,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-4.3.1.css" />
+    <Content Include="Content\bootstrap-3.3.1.js" />
+    <Content Include="Content\popper.min.js" />
+    <Content Include="Content\jquery-3.3.1.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -247,7 +248,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Form.cshtml" />
     <Content Include="Views\User\Registration.cshtml" />
-    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Orderhome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

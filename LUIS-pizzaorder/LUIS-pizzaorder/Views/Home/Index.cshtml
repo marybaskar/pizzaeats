@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "PizzaEats";
 }
+
 <br />
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
@@ -12,7 +13,7 @@
             $('Size::checked').each(function () {
                 text += $(this).val() + ',';
             });
-            text = text.substring(0,text.length - 1);
+            text = text.substring(0, text.length - 1);
             $('#txt').val(text);
             var count = $("[type='checkbox']:checked").length;
         });
@@ -85,7 +86,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 @Html.TextBox("String",null,
-               new { style = "width: 900px;" }) <input type="submit" value="Enter" id="txt"/>
+               new { style = "width: 900px;" }) <input type="submit" value="Enter" id="txt" />
 
 
             </div>
@@ -139,7 +140,7 @@
     {
         @Html.Label("please enter Number")
     }
-    @if (Model.NoTopping )
+    @if (Model.NoTopping)
     {
         @Html.Label("please enter Topping")
     }

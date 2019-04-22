@@ -13,10 +13,10 @@ namespace LUIS_pizzaorder.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class pizzadbEntities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public pizzadbEntities()
+            : base("name=pizzadbEntities")
         {
         }
     

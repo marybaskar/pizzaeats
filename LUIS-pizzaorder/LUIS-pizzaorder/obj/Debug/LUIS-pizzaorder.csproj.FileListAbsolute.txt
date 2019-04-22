@@ -244,7 +244,6 @@ C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-piz
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.csprojAssemblyReference.cache
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.csproj.CoreCompileInputs.cache
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.csproj.CopyComplete
 C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.dll
@@ -392,3 +391,4 @@ C:\Users\Afia\Downloads\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS
 C:\Users\Afia\Downloads\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.csproj.CopyComplete
 C:\Users\Afia\Downloads\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.dll
 C:\Users\Afia\Downloads\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.pdb
+C:\Users\maris\Documents\Programs\401 Project\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.csprojAssemblyReference.cache

@@ -67,7 +67,9 @@ namespace LUIS_pizzaorder.Controllers
                 {
                     if(string.Compare(Crypto.Hash(login.password), v.password)==0)
                     {
-
+                        Session["UserID"] = v.user_id.ToString();
+                        Session["UserName"] = v.username.ToString();
+                        return RedirectToAction("UserDashBoard");
                     }
                     else
                     {
@@ -81,7 +83,27 @@ namespace LUIS_pizzaorder.Controllers
             return View();
         }
 
-       [NonAction]
+
+        public ActionResult UserDashBoard()
+        {
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+
+        
+        public ActionResult Signout()
+        {
+            Session.Abandon();
+            return View("Login");
+        }
+
+        [NonAction]
        public bool UsernameExists(string username)
        {
             using (UserContext dc = new UserContext())

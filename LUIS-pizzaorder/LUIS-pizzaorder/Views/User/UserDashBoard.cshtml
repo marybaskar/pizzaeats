@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "UserDashBoard";
+}
+
+<h2>Account</h2>
+<fieldset>
+
+@if (Session["UserName"] != null)
+{
+    <h2>
+        Welcome @Session["UserName"].ToString()
+    </h2>
+   
+} 
+
+</fieldset>
+
+<body>
+    @Html.ActionLink("Payment Options", "CCInfo", "User")
+    @Html.ActionLink("Edit Address", "Address", "User")
+</body>

@@ -70,7 +70,7 @@
                 <br />
             </div>
             <div class="col-md-4">
-                <h1>Third Topping:</h1>
+                <h1>Vegetable Topping:</h1>
 
                 <label>@Html.RadioButtonFor(model => model.Topping3, "Olives") Olives</label>
                 <br />
@@ -133,14 +133,14 @@
     </div>
     @if (Model.NoSize)
     {
-        @Html.Label("please enter size")
+        @Html.Label("Enter size")
     }
     @if (Model.NoNumber)
     {
-        @Html.Label("please enter Number")
+        @Html.Label("Enter Amount")
     }
     @if (Model.NoTopping )
     {
-        @Html.Label("please enter Topping")
+        @Html.Label("Enter Topping")
     }
 </div>

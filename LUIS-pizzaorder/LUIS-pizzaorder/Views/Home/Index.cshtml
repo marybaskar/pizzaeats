@@ -4,7 +4,20 @@
     ViewBag.Title = "PizzaEats";
 }
 <br />
-
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('Size').click(function () {
+            var text = "";
+            $('Size::checked').each(function () {
+                text += $(this).val() + ',';
+            });
+            text = text.substring(0,text.length - 1);
+            $('#txt').val(text);
+            var count = $("[type='checkbox']:checked").length;
+        });
+    });
+</script>
 <div class="form-horizontal">
 
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -72,7 +85,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 @Html.TextBox("String",null,
-               new { style = "width: 900px;" }) <input type="submit" value="Enter" />
+               new { style = "width: 900px;" }) <input type="submit" value="Enter" id="txt"/>
 
 
             </div>

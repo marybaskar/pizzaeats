@@ -9,6 +9,16 @@ namespace LUISPizzaOrder.Controllers
     public class HomeController : Controller
     {
         #region public async Task<ActionResult> Index(string String)
+        [HttpGet]
+        public ActionResult Size()
+        {
+            return View("Size");
+        }
+        [HttpGet]
+        public ActionResult Topping()
+        {
+            return View("Topping");
+        }
         public async Task<ActionResult> Index(string String)
         {
             Query Return = new Query();

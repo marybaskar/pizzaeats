@@ -1,0 +1,29 @@
+﻿@model JSONUtils.Query
+@{
+    ViewBag.Title = "Size";
+}
+
+<div class="form-horizontal">
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @using (Html.BeginForm())
+    {
+
+        <div class="row">
+            <div class="col-md-4">
+                <h1>Please Choose Pizza Size:</h1>
+
+                <label>@Html.RadioButtonFor(model => model.Size, "Small") Small</label>
+                <br />
+
+                <label>@Html.RadioButtonFor(model => model.Size, "Medium") Medium</label>
+                <br />
+
+                <label>@Html.RadioButtonFor(model => model.Size, "Large") large </label>
+                <br />
+            </div>
+        </div>
+        
+    }
+</div>
+

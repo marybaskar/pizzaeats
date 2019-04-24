@@ -1,0 +1,58 @@
+﻿@model JSONUtils.Query
+@{
+    ViewBag.Title = "Topping";
+}
+
+
+
+<div class="form-horizontal">
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @using (Html.BeginForm())
+    {   
+        
+    <div class="row">
+        <h1>Please Choose one or more Topping:</h1>
+        <div class="col-md-4">
+            <h1>Cheese Topping:</h1>
+
+            <label>@Html.RadioButtonFor(model => model.Topping, "Blue Cheese") Blue Cheese</label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping, "Feta") Feta </label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping, "Pepper Jack") Pepper Jack</label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping, "Mozzarella") Mozzarella</label>
+            <br />
+
+        </div>
+        <div class="col-md-4">
+            <h1>Meat Topping:</h1>
+
+            <label>@Html.RadioButtonFor(model => model.Topping2, "Chicken") Chicken</label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping2, "Turkey") Turkey </label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping2, "Shrimp") Shrimp </label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping2, "Steak") Steak </label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping2, "Lamb") Lamb </label>
+            <br />
+        </div>
+        <div class="col-md-4">
+            <h1>Vegetable Topping:</h1>
+
+            <label>@Html.RadioButtonFor(model => model.Topping3, "Olives") Olives</label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping3, "Peppers") Peppers </label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping3, "Mushrooms") Mushrooms </label>
+            <br />
+            <label>@Html.RadioButtonFor(model => model.Topping3, "Spinach") Spinach </label>
+            <br />
+        </div>
+    </div>
+    }
+     
+</div>

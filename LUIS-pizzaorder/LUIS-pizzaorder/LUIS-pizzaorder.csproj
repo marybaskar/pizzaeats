@@ -245,10 +245,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Form.cshtml" />
+    <Content Include="Views\Home\Size.cshtml" />
     <Content Include="Views\User\Registration.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\UserDashBoard.cshtml" />
+    <Content Include="Views\Home\Topping.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

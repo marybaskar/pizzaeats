@@ -150,11 +150,13 @@
     <Compile Include="Models\credit_card.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Extended\pizza.cs" />
     <Compile Include="Models\Extended\user.cs" />
     <Compile Include="Models\LUIS.cs" />
     <Compile Include="Models\pizza.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PizzaContext.cs" />
     <Compile Include="Models\UserContext.cs" />
     <Compile Include="Models\PizzaEatsDB.Context.cs">
       <AutoGen>True</AutoGen>
@@ -250,6 +252,7 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\UserDashBoard.cshtml" />
     <Content Include="Views\Home\Topping.cshtml" />
+    <Content Include="Views\Home\Submitted.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

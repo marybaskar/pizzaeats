@@ -14,11 +14,13 @@ namespace LUIS_pizzaorder.Controllers
         public ActionResult Registration()
         {
             return View();
+            
         }
 
         [HttpPost]
         public ActionResult Registration([Bind(Exclude = "user_id")] user newUser)
         {
+            
             bool Status = false;
             string Message = "";
 
@@ -113,8 +115,6 @@ namespace LUIS_pizzaorder.Controllers
             }
        }
 
-        //Login
-
-        //LogOut
+        
     }
 }

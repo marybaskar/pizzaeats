@@ -16,14 +16,28 @@
             <div class="col-md-4">
                 
 
-                <label>@Html.RadioButtonFor(model => model.Size, "Small") Small</label>
+                <label>@Html.RadioButton("Size", "Small",true) Small</label>
                 <br />
 
-                <label>@Html.RadioButtonFor(model => model.Size, "Medium") Medium</label>
+                <label>@Html.RadioButton("Size", "Medium") Medium</label>
                 <br />
 
-                <label>@Html.RadioButtonFor(model => model.Size, "Large") large </label>
+                <label>@Html.RadioButton("Size", "Large") large </label>
                 <br />
+                <input type="button" onclick="CheckSelected()" value="continue">
+                @section Scripts{
+                    <script type="text/javascript">
+                        function CheckSelected() {
+                            var selected = $("input[name='Size']:checked").val();
+                            var selectedTopping = $("input[name='Topping']:checked").val();
+                            var selectedTopping2 = $("input[name='Topping2']:checked").val();
+                            var selectedTopping3 = $("input[name='Topping3']:checked").val();
+                            alert("size: " + selected + " topping: " + selectedTopping+" "+ selectedTopping2+" " + selectedTopping3);
+                        }
+                        $(document).ready(function () {
+                        });
+                    </script>
+                            }
             </div>
         </div>
         <div class="row">
@@ -33,40 +47,40 @@
             <div class="col-md-4">
                 <h1>Cheese Topping:</h1>
 
-                <label>@Html.RadioButtonFor(model => model.Topping, "Blue Cheese") Blue Cheese</label>
+                <label>@Html.RadioButton("Topping", "Blue Cheese") Blue Cheese</label>
                 <br />
-                <label>@Html.RadioButtonFor(model => model.Topping, "Feta") Feta </label>
+                <label>@Html.RadioButton("Topping", "Feta") Feta </label>
                 <br />
-                <label>@Html.RadioButtonFor(model => model.Topping, "Pepper Jack") Pepper Jack</label>
+                <label>@Html.RadioButton("Topping", "Pepper Jack") Pepper Jack</label>
                 <br />
-                <label>@Html.RadioButtonFor(model => model.Topping, "Mozzarella") Mozzarella</label>
+                <label>@Html.RadioButton("Toppin", "Mozzarella") Mozzarella</label>
                 <br />
 
             </div>
             <div class="col-md-4">
                 <h1>Meat Topping:</h1>
 
-                <label>@Html.RadioButtonFor(model => model.Topping2, "Chicken") Chicken</label>
+                <label>@Html.RadioButton("Topping2", "Chicken") Chicken</label>
                 <br />
-                <label>@Html.RadioButtonFor(model => model.Topping2, "Turkey") Turkey </label>
+                <label>@Html.RadioButton("Topping2", "Turkey") Turkey </label>
                 <br />
-                <label>@Html.RadioButtonFor(model => model.Topping2, "Shrimp") Shrimp </label>
+                <label>@Html.RadioButton("Topping2", "Shrimp") Shrimp </label>
                 <br />
-                <label>@Html.RadioButtonFor(model => model.Topping2, "Steak") Steak </label>
+                <label>@Html.RadioButton("Topping2", "Steak") Steak </label>
                 <br />
-                <label>@Html.RadioButtonFor(model => model.Topping2, "Lamb") Lamb </label>
+                <label>@Html.RadioButton("Topping2", "Lamb") Lamb </label>
                 <br />
             </div>
             <div class="col-md-4">
                 <h1>Vegetable Topping:</h1>
 
-                <label>@Html.RadioButtonFor(model => model.Topping3, "Olives") Olives</label>
+                <label>@Html.RadioButton("Topping3", "Olives") Olives</label>
                 <br />
-                <label>@Html.RadioButtonFor(model => model.Topping3, "Peppers") Peppers </label>
+                <label>@Html.RadioButton("Topping3", "Peppers") Peppers </label>
                 <br />
-                <label>@Html.RadioButtonFor(model => model.Topping3, "Mushrooms") Mushrooms </label>
+                <label>@Html.RadioButton("Topping3", "Mushrooms") Mushrooms </label>
                 <br />
-                <label>@Html.RadioButtonFor(model => model.Topping3, "Spinach") Spinach </label>
+                <label>@Html.RadioButton("Topping3", "Spinach") Spinach </label>
                 <br />
             </div>
         </div>

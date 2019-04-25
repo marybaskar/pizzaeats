@@ -39,7 +39,7 @@ namespace JSONUtils
     
     public class Query
     {    
-        public int Pizza_id { get; set; }
+        
         public string Size { get; set; }
         public string Topping { get; set; }
         public string Topping2 { get; set; }

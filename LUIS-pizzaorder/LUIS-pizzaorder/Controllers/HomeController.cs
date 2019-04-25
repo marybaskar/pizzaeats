@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Configuration;
 namespace LUISPizzaOrder.Controllers
-{   
+{
     public class HomeController : Controller
     {
         #region public async Task<ActionResult> Index(string String)
@@ -28,46 +28,39 @@ namespace LUISPizzaOrder.Controllers
                 if (String != null)
                 {
                     LUIS objLUISResult = await QueryLUIS(String);
-                    
-                            foreach (var item in objLUISResult.entities)
-                            {
-                                
-                                 if (item.type == "size")
-                                {
-                                    Return.Size = item.entity;
-                                }
-                                                                                                  
-                                if (item.type == "topping")
-                                {
-                                    Return.Topping = item.entity;
-                                }
 
-                                if (item.type == "topping2")
-                                {
-                                     Return.Topping2 = item.entity;
-                                 }
-                                if (item.type == "topping3")
-                                {
-                                    Return.Topping3 = item.entity;
-                                }
-                                
-                                if (item.type == "builtin.number")
-                                {
-                                  Return.Number = item.entity;
-                                }
+                    foreach (var item in objLUISResult.entities)
+                    {
 
-                        
-                            }
-                    Console.Clear();
+                        if (item.type == "size")
+                        {
+                            Return.Size = item.entity;
                         }
-                        
 
-                    
-                         
+                        if (item.type == "topping")
+                        {
+                            Return.Topping = item.entity;
+                        }
 
-                       
-                    
-                
+                        if (item.type == "topping2")
+                        {
+                            Return.Topping2 = item.entity;
+                        }
+                        if (item.type == "topping3")
+                        {
+                            Return.Topping3 = item.entity;
+                        }
+
+                        if (item.type == "builtin.number")
+                        {
+                            Return.Number = item.entity;
+                        }
+
+
+                    }
+                    Console.Clear();
+                }
+
                 return View(Return);
             }
             catch (Exception ex)
@@ -100,5 +93,11 @@ namespace LUISPizzaOrder.Controllers
             return LUISResult;
         }
         #endregion
+        /*[HttpPost]
+        public Action SubmitPizza(string size, string cTopping, string mTopping, string vTopping)
+        {
+
+            return View(Submitted);
+        }*/
     }
 }

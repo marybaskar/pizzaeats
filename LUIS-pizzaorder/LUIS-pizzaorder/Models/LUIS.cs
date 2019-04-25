@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace JSONUtils
 {
@@ -41,10 +42,18 @@ namespace JSONUtils
     {    
         
         public string Size { get; set; }
+
+        [Display(Name ="Cheese Topping")]
         public string Topping { get; set; }
+
+        [Display(Name = "Meat Topping")]
         public string Topping2 { get; set; }
+
+        [Display(Name = "Vegetable Topping")]
         public string Topping3 { get; set; }
+
         public string Number { get; set; }
+
         public bool NoSize
         {
             get { return string.IsNullOrWhiteSpace(Size) ; }

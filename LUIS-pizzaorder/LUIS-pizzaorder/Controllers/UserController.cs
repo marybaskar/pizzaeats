@@ -9,6 +9,12 @@ namespace LUIS_pizzaorder.Controllers
 {
     public class UserController : Controller
     {
+        //Home
+        [HttpGet]
+        public ActionResult Home()
+        {
+            return View();
+        }
         //Register
         [HttpGet]
         public ActionResult Registration()
@@ -112,6 +118,7 @@ namespace LUIS_pizzaorder.Controllers
                 return v != null;
             }
        }
+
 
         //Login
 

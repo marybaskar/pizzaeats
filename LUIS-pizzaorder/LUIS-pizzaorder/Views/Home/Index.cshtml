@@ -16,7 +16,7 @@
             <div class="col-md-4">
                 
 
-                <label>@Html.RadioButton("Size", "Small",true) Small</label>
+                <label>@Html.RadioButton("Size", "Small") Small</label>
                 <br />
 
                 <label>@Html.RadioButton("Size", "Medium") Medium</label>
@@ -32,9 +32,19 @@
                             var selectedTopping = $("input[name='Topping']:checked").val();
                             var selectedTopping2 = $("input[name='Topping2']:checked").val();
                             var selectedTopping3 = $("input[name='Topping3']:checked").val();
-                            @*alert("size: " + selected + " topping: " + selectedTopping + " " + selectedTopping2 + " " + selectedTopping3);*@
+                            //var numberOfPizza = $("@Model.Number");
+                            //alert("size: " + selected + " topping: " + selectedTopping + " " + selectedTopping2 + " " + selectedTopping3 );
+                            $.ajax({
+                                type: "POST",
+                                data: { size: selected, cTopping: selectedTopping, mTopping: selectedTopping2, vTopping: selectedTopping3 },
+                                url: '@Url.Action("SubmitPizza", "Home")',
+                                async: true,
+                                error: function () {
+                                    alert('Error Occured');
+                                }
+                            });
 
-                        };
+                        }
                      
                     </script>
                             }
@@ -133,7 +143,7 @@
            new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
-    @if (Model.NoSize)
+    @*@if (Model.NoSize)
     {
         @Html.ActionLink("EnterSize", "Size")
     }
@@ -144,5 +154,5 @@
     @if (Model.NoTopping)
     {
         @Html.ActionLink("EnterTopping", "Topping")
-    }
+    }*@
 </div>

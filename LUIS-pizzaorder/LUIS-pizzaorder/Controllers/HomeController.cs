@@ -4,7 +4,9 @@ using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Configuration;
-namespace LUISPizzaOrder.Controllers
+using LUIS_pizzaorder.Models;
+
+namespace LUIS_pizzaorder.Controllers
 {
     public class HomeController : Controller
     {
@@ -93,11 +95,98 @@ namespace LUISPizzaOrder.Controllers
             return LUISResult;
         }
         #endregion
-        /*[HttpPost]
-        public Action SubmitPizza(string size, string cTopping, string mTopping, string vTopping)
+        [HttpPost]
+        public ActionResult SubmitPizza( string size, string cTopping, string mTopping, string vTopping)
         {
+            pizza orderedPizza = new pizza();
 
-            return View(Submitted);
-        }*/
+            string pizzaSize=null;
+            Nullable<int> toppingCheese=null;
+            Nullable<int> toppingMeat=null;
+            Nullable<int> toppingVeg=null;
+
+            switch (size)
+            {
+                case "Small":
+                    pizzaSize = "S";
+                    break;
+                case "Medium":
+                    pizzaSize = "M";
+                    break;
+                case "Large":
+                    pizzaSize = "L";
+                    break;
+                default:
+                    break;
+            }
+
+            switch (cTopping)
+            {
+                case "Blue Cheese":
+                    toppingCheese = 1;
+                    break;
+                case "Feta":
+                    toppingCheese = 2;
+                    break;
+                case "Mozzarella":
+                    toppingCheese = 3;
+                    break;
+                case "Pepper Jack":
+                    toppingCheese = 4;
+                    break;
+            }
+
+            switch (mTopping)
+            {
+                case "Chicken":
+                    toppingMeat = 1;
+                    break;
+                case "Lamb":
+                    toppingMeat = 2;
+                    break;
+                case "Shrimp":
+                    toppingMeat = 3;
+                    break;
+                case "Steak":
+                    toppingMeat = 4;
+                    break;
+                case "Turkey":
+                    toppingMeat = 5;
+                    break;
+            }
+
+            switch (vTopping)
+            {
+                case "Mushrooms":
+                    toppingVeg = 1;
+                    break;
+                case "Olives":
+                    toppingVeg = 2;
+                    break;
+                case "Peppers":
+                    toppingVeg = 3;
+                    break;
+                case "Spinach":
+                    toppingVeg = 4;
+                    break;
+            }
+            orderedPizza.size = pizzaSize;
+            orderedPizza.cheese_topping = toppingCheese;
+            orderedPizza.meat_topping = toppingMeat;
+            orderedPizza.veg_topping = toppingVeg;
+            using (PizzaContext dc = new PizzaContext())
+            {
+                dc.pizzas.Add(orderedPizza);
+                dc.SaveChanges();
+            }
+
+
+            return RedirectToAction("Submitted");
+        }
+        public ActionResult Submitted()
+        {
+            return View();
+
+        }
     }
 }

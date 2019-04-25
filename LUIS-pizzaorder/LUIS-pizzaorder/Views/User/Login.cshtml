@@ -5,12 +5,23 @@
 }
 
 <h2>Login</h2>
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @Html.TextBox("String", null,
+        new { style = "width: 900px;" })
+            <input type="submit" value="Enter" id="txt" />
+        </div>
+    </div>
+}
 
 
-@using (Html.BeginForm()) 
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })

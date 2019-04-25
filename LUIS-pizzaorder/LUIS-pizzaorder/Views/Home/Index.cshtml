@@ -14,9 +14,9 @@
         <div class="row">
             <h1>Please Choose Pizza Size:</h1>
             <div class="col-md-4">
-                
 
-                <label>@Html.RadioButton("Size", "Small",true) Small</label>
+
+                <label>@Html.RadioButton("Size", "Small") Small</label>
                 <br />
 
                 <label>@Html.RadioButton("Size", "Medium") Medium</label>
@@ -24,20 +24,7 @@
 
                 <label>@Html.RadioButton("Size", "Large") large </label>
                 <br />
-                <input type="button" onclick="CheckSelected()" value="continue">
-                @section Scripts{
-                    <script type="text/javascript">
-                        function CheckSelected() {
-                            var selected = $("input[name='Size']:checked").val();
-                            var selectedTopping = $("input[name='Topping']:checked").val();
-                            var selectedTopping2 = $("input[name='Topping2']:checked").val();
-                            var selectedTopping3 = $("input[name='Topping3']:checked").val();
-                            alert("size: " + selected + " topping: " + selectedTopping+" "+ selectedTopping2+" " + selectedTopping3);
-                        }
-                        $(document).ready(function () {
-                        });
-                    </script>
-                            }
+
             </div>
         </div>
         <div class="row">
@@ -92,6 +79,7 @@
 
             </div>
         </div>
+        <input type="button" onclick="CheckSelected()" value="continue">
     }
     <div class="form-group">
         @Html.LabelFor(model => model.Size,
@@ -133,16 +121,18 @@
            new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
-    @if (Model.NoSize)
-    {
-        @Html.ActionLink("EnterSize", "Size")
+
+    @section Scripts{
+        <script type="text/javascript">
+            function CheckSelected() {
+                var selectedsize = $("input[name='Size']:checked").val();
+                var selectedTopping = $("input[name='Topping']:checked").val();
+                var selectedTopping2 = $("input[name='Topping2']:checked").val();
+                var selectedTopping3 = $("input[name='Topping3']:checked").val();
+                alert("size: " + selectedsize + " topping: " + selectedTopping + " " + selectedTopping2 + " " + selectedTopping3);
+            }
+            );
+        </script>
     }
-    @if (Model.NoNumber)
-    {
-        @Html.Label("Please Enter Amount")
-    }
-    @if (Model.NoTopping)
-    {
-        @Html.ActionLink("EnterTopping", "Topping")
-    }
+    
 </div>

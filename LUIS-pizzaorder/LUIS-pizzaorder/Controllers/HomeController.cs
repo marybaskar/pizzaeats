@@ -4,63 +4,68 @@ using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Configuration;
+using LUIS_pizzaorder.Models;
+using System.Linq;
+
 namespace LUISPizzaOrder.Controllers
 {
+
     public class HomeController : Controller
     {
         #region public async Task<ActionResult> Index(string String)
-        [HttpGet]
-        public ActionResult Size()
-        {
-            return View("Size");
-        }
-        [HttpGet]
-        public ActionResult Topping()
-        {
-            return View("Topping");
-        }
-
         public async Task<ActionResult> Index(string String)
         {
             Query Return = new Query();
+            //the entities
+
+            //the intents
+
             try
             {
                 if (String != null)
                 {
                     LUIS objLUISResult = await QueryLUIS(String);
+                    //if (theIntent.intent == "pizzaOrder")
+                    //{
+                    //Response.Write("<script>alert('You want to order')</script>");
 
                     foreach (var item in objLUISResult.entities)
                     {
+                        if (item.type == "size") { Return.Size = item.entity; }
+                        if (item.type == "topping") { Return.Topping = item.entity; }
+                        if (item.type == "topping2") { Return.Topping2 = item.entity; }
+                        if (item.type == "topping3") { Return.Topping3 = item.entity; }
+                        if (item.type == "builtin.number") { Return.Number = item.entity; }
+                    }
+                    //return View(Return);
+                    //}
+                    var theIntent = objLUISResult.topScoringIntent;
 
-                        if (item.type == "size")
-                        {
-                            Return.Size = item.entity;
-                        }
+                    if (theIntent.intent == "Order")
+                    {
+                        //ViewBag.Message = string.Format("Your want to order pizza");
+                        return View("~/Views/Home/Index.cshtml");
 
-                        if (item.type == "topping")
-                        {
-                            Return.Topping = item.entity;
-                        }
+                    }
 
-                        if (item.type == "topping2")
-                        {
-                            Return.Topping2 = item.entity;
-                        }
-                        if (item.type == "topping3")
-                        {
-                            Return.Topping3 = item.entity;
-                        }
-
-                        if (item.type == "builtin.number")
-                        {
-                            Return.Number = item.entity;
-                        }
-
+                    else if (theIntent.intent == "LogIn")
+                    {
+                        //ViewBag.Message = string.Format("Your want to Login")
+                        return View("~/Views/User/Login.cshtml");
+                    }
+                    else if (theIntent.intent == "SignUp")
+                    {
+                        //ViewBag.Message = string.Format("Your want to create an account");
+                        return View("~/Views/User/Registration.cshtml");
+                    }
+                    else if (theIntent.intent == "None" || theIntent.intent == "Greeting")
+                    {
+                        Response.Write("<script>alert('Okay... please enter what you want to do related to pizza ordering. Thanks!')</script>");
+                        //ViewBag.Message = string.Format("Okay... please enter what you want to do related to pizza ordering. Thanks!");
 
                     }
                     Console.Clear();
                 }
-
                 return View(Return);
             }
             catch (Exception ex)
@@ -68,6 +73,8 @@ namespace LUISPizzaOrder.Controllers
                 ModelState.AddModelError(string.Empty, "Error: " + ex);
                 return View(Return);
             }
+
+
         }
         #endregion
         // Utility
@@ -93,11 +100,8 @@ namespace LUISPizzaOrder.Controllers
             return LUISResult;
         }
         #endregion
-        /*[HttpPost]
-        public Action SubmitPizza(string size, string cTopping, string mTopping, string vTopping)
-        {
 
-            return View(Submitted);
-        }*/
+
+
     }
 }

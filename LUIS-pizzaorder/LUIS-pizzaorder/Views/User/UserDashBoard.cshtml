@@ -6,16 +6,27 @@
 <h2>Account</h2>
 <fieldset>
 
-@if (Session["UserName"] != null)
-{
-    <h2>
-        Welcome @Session["UserName"].ToString()
-    </h2>
-   
-} 
+    @if (Session["UserName"] != null)
+    {
+        <h2>
+            Welcome @Session["UserName"].ToString()
+        </h2>
+
+    }
 
 </fieldset>
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @Html.TextBox("String", null,
+        new { style = "width: 900px;" })
+            <input type="submit" value="Enter" id="txt" />
+        </div>
+    </div>
+}
+
 
 @*<body>
-    @Html.ActionLink("Edit Address", "Address", "User")
-</body>*@
+        @Html.ActionLink("Edit Address", "Address", "User")
+    </body>*@

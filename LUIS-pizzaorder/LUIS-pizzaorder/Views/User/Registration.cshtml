@@ -7,6 +7,17 @@
 }
 
 <h2>Registration</h2>
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @Html.TextBox("String", null,
+        new { style = "width: 900px;" })
+            <input type="submit" value="Enter" id="txt" />
+        </div>
+    </div>
+}
+
 
 @if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
 {
@@ -115,10 +126,10 @@ else
     }
 }
 
-    <div>
-        @Html.ActionLink("Login", "Login")
-    </div>
+<div>
+    @Html.ActionLink("Login", "Login")
+</div>
 
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

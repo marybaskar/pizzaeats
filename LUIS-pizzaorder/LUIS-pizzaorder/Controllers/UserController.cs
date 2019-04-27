@@ -27,17 +27,15 @@ namespace LUIS_pizzaorder.Controllers
         {
             bool Status = false;
             string Message = "";
-            
 
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 bool isExist = UsernameExists(newUser.username);
                 if(isExist)
                 {
                     ModelState.AddModelError("UsernameExist", "Username already exists");
-                    newUser.password = null;
-                    newUser.comfirmpassword = null;
                     return View(newUser);
+
                 }
 
                 newUser.password = Crypto.Hash(newUser.password);
@@ -48,20 +46,14 @@ namespace LUIS_pizzaorder.Controllers
                     dc.users.Add(newUser);
                     dc.SaveChanges();
                 }
-                ViewBag.Status = Status;
 
-                return RedirectToAction("Login");
             }
             else
             {
                 Message = "Invalid Request";
-                ViewBag.Status = Status;
-                newUser.password = null;
-                newUser.comfirmpassword = null;
-                return View(newUser);
             }
-           
-            
+            ViewBag.Status = Status;
+            return View(newUser);
         }
 
         [HttpGet]

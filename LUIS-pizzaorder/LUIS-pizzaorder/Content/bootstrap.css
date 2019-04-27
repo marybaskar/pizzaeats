@@ -4956,6 +4956,7 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
+  background-image:url(img/bg_option6.png)
   padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 30px;

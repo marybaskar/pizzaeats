@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap Agency Page Template</title>
     <!-- Bootstrap -->
-    <link href="css/bootstrap-4.3.1.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -23,7 +23,9 @@
                     <div class="col-12">
                         <h1 class="text-center">Welcome To Pizza Eats</h1>
                         <p class="text-center">If you would like to place an order with us through our bot, please click here to begin!</p>
-                        <p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">Place Order</a> </p>
+                        <p class="text-center">
+                            <a class="btn btn-primary btn-lg" href="#" role="button">Place Order</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -37,24 +39,22 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center">
                     <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="vector-signin.png" data-holder-rendered="true">
-                    <h3>Sign In</h3>
-                    <p><a class="btn btn-link" href="Menu.html">Click Here »</a></p>
+                    <h3>Registration</h3>
+                    <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Registration") »</a></p>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center">
                     <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="vector-signUp.png" data-holder-rendered="true">
                     <h3>Sign Up</h3>
-                    <p><a class="btn btn-link" href="Signup.html">Click Here »</a></p>
+                    <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Login") »</a></p>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center">
                     <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="vector-checkout.png" data-holder-rendered="true">
                     <h3>Checkout</h3>
-                    <p><a class="btn btn-link" href="Menu.html">Click Here »</a></p>
+                    <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Checkout") »</a></p>
                 </div>
             </div>
-            </div>
-        </section>
-            
-            
+        </div>
+    </section>      
 </body>
 </html>
 

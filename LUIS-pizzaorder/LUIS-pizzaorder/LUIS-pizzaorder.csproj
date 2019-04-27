@@ -150,6 +150,7 @@
     <Compile Include="Models\credit_card.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Extended\pizza.cs" />
     <Compile Include="Models\Extended\user.cs" />
     <Compile Include="Models\LUIS.cs" />
     <Compile Include="Models\pizza.cs">
@@ -190,6 +191,7 @@
     <Compile Include="Models\user_order.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PizzaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

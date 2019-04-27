@@ -5,64 +5,69 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Configuration;
 using LUIS_pizzaorder.Models;
+using System.Linq;
 
 namespace LUIS_pizzaorder.Controllers
 {
     public class HomeController : Controller
     {
-        #region public async Task<ActionResult> Index(string String)
-        [HttpGet]
-        public ActionResult Size()
+        public ActionResult HomeStart()
         {
-            return View("Size");
+            return View();
         }
-        [HttpGet]
-        public ActionResult Topping()
-        {
-            return View("Topping");
-        }
-
         public async Task<ActionResult> Index(string String)
         {
             Query Return = new Query();
+            //the entities
+
+            //the intents
+
             try
             {
                 if (String != null)
                 {
                     LUIS objLUISResult = await QueryLUIS(String);
+                    //if (theIntent.intent == "pizzaOrder")
+                    //{
+                    //Response.Write("<script>alert('You want to order')</script>");
 
                     foreach (var item in objLUISResult.entities)
                     {
+                        if (item.type == "size") { Return.Size = item.entity; }
+                        if (item.type == "topping") { Return.Topping = item.entity; }
+                        if (item.type == "topping2") { Return.Topping2 = item.entity; }
+                        if (item.type == "topping3") { Return.Topping3 = item.entity; }
+                        if (item.type == "builtin.number") { Return.Number = item.entity; }
+                    }
+                    //return View(Return);
+                    //}
+                    var theIntent = objLUISResult.topScoringIntent;
 
-                        if (item.type == "size")
-                        {
-                            Return.Size = item.entity;
-                        }
+                    if (theIntent.intent == "Order")
+                    {
+                        //ViewBag.Message = string.Format("Your want to order pizza");
+                        return View("~/Views/Home/Order.cshtml");
 
-                        if (item.type == "topping")
-                        {
-                            Return.Topping = item.entity;
-                        }
+                    }
 
-                        if (item.type == "topping2")
-                        {
-                            Return.Topping2 = item.entity;
-                        }
-                        if (item.type == "topping3")
-                        {
-                            Return.Topping3 = item.entity;
-                        }
-
-                        if (item.type == "builtin.number")
-                        {
-                            Return.Number = item.entity;
-                        }
-
+                    else if (theIntent.intent == "LogIn")
+                    {
+                        //ViewBag.Message = string.Format("Your want to Login")
+                        return View("~/Views/User/Login.cshtml");
+                    }
+                    else if (theIntent.intent == "SignUp")
+                    {
+                        //ViewBag.Message = string.Format("Your want to create an account");
+                        return View("~/Views/User/Registration.cshtml");
+                    }
+                    else if (/*theIntent.intent == "None" ||*/ theIntent.intent == "Greeting")
+                    {
+                        Response.Write("<script>alert('Please enter what you want to do related to pizza ordering. Thanks!')</script>");
+                        //ViewBag.Message = string.Format("Okay... please enter what you want to do related to pizza ordering. Thanks!");
 
                     }
                     Console.Clear();
                 }
-
                 return View(Return);
             }
             catch (Exception ex)
@@ -70,10 +75,14 @@ namespace LUIS_pizzaorder.Controllers
                 ModelState.AddModelError(string.Empty, "Error: " + ex);
                 return View(Return);
             }
+
+
         }
-        #endregion
+
+
+
+
         // Utility
-        #region private static async Task<Example> QueryLUIS(string Query)
         private static async Task<LUIS> QueryLUIS(string Query)
         {
             LUIS LUISResult = new LUIS();
@@ -94,7 +103,7 @@ namespace LUIS_pizzaorder.Controllers
             }
             return LUISResult;
         }
-        #endregion
+
         [HttpPost]
         public ActionResult SubmitPizza( string size, string cTopping, string mTopping, string vTopping)
         {
@@ -179,13 +188,21 @@ namespace LUIS_pizzaorder.Controllers
                 dc.pizzas.Add(orderedPizza);
                 dc.SaveChanges();
             }
-
-            return View("Submitted");
-        }
-        public ActionResult Submitted()
-        {
+            Session["Pizza"] = orderedPizza.pizza_id.ToString();
+            if (Session["UserID"] != null)
+            {
+                user_order _Order = new user_order();
+                _Order.user_id = Int32.Parse(Session["UserID"].ToString());
+                _Order.pizza_id = orderedPizza.pizza_id;
+                //_Order.total = 
+                using (User_OrderContext db = new User_OrderContext())
+                {
+                   //connect pizza to user and calculate total
+                }
+            }
+            
             return View();
-
         }
+        
     }
 }

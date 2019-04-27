@@ -152,6 +152,7 @@
     </Compile>
     <Compile Include="Models\Extended\pizza.cs" />
     <Compile Include="Models\Extended\user.cs" />
+    <Compile Include="Models\Extended\user_order.cs" />
     <Compile Include="Models\LUIS.cs" />
     <Compile Include="Models\pizza.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
@@ -192,6 +193,7 @@
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PizzaContext.cs" />
+    <Compile Include="Models\User_OrderContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -278,9 +280,9 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\UserDashBoard.cshtml" />
     <Content Include="Views\Home\Topping.cshtml" />
-    <Content Include="Views\User\Home.cshtml" />
     <Content Include="Views\Home\First.cshtml" />
-    <Content Include="Views\Home\Submitted.cshtml" />
+    <Content Include="Views\Home\SubmitPizza.cshtml" />
+    <Content Include="Views\Home\HomeStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

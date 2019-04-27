@@ -1,10 +1,10 @@
 ﻿@model LUIS_pizzaorder.Models.user
 
 @{
-    /**/
-
-    ViewBag.Title = "Home";
+    ViewBag.Title = "HomeStart";
 }
+
+<h2>Home</h2>
 
 <html lang="en">
 <head>
@@ -23,6 +23,16 @@
                     <div class="col-12">
                         <h1 class="text-center">Welcome To Pizza Eats</h1>
                         <p class="text-center">If you would like to place an order with us through our bot, please click here to begin!</p>
+                        
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <center>
+                                        @Html.TextBox("String",null,new { style = "width: 900px;" }) <input type="submit" value="Enter" id="txt" placeholder="Naviagte Site Using Search Bar!" />
+                                    </center>
+                                   
+                                </div>
+                            </div>
+                       
                         <p class="text-center">
                             <a class="btn btn-primary btn-lg" href="#" role="button">Place Order</a>
                         </p>
@@ -32,29 +42,32 @@
         </div>
     </header>
     <section>
+
+    </section>
+    <section>
         <div class="container">
             <div class="row"> </div>
         </div>
         <div class="container ">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-                    <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="vector-signin.png" data-holder-rendered="true">
+                    <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="@Url.Content("~/Content/img/vector-signin.png")" data-holder-rendered="true">
                     <h3>Registration</h3>
                     <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Registration") »</a></p>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-                    <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="vector-signUp.png" data-holder-rendered="true">
+                    <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="@Url.Content("~/Content/img/vector-signUp.png")" data-holder-rendered="true">
                     <h3>Sign Up</h3>
                     <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Login") »</a></p>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-                    <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="vector-checkout.png" data-holder-rendered="true">
+                    <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="@Url.Content("~/Content/img/vector-checkout.png")" data-holder-rendered="true">
                     <h3>Checkout</h3>
                     <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Checkout") »</a></p>
                 </div>
             </div>
         </div>
-    </section>      
+    </section>
 </body>
 </html>
 

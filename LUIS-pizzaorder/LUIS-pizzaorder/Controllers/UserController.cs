@@ -9,18 +9,22 @@ namespace LUIS_pizzaorder.Controllers
 {
     public class UserController : Controller
     {
+        //Home
+        [HttpGet]
+        public ActionResult Home()
+        {
+            return View();
+        }
         //Register
         [HttpGet]
         public ActionResult Registration()
         {
             return View();
-            
         }
 
         [HttpPost]
         public ActionResult Registration([Bind(Exclude = "user_id")] user newUser)
         {
-            
             bool Status = false;
             string Message = "";
 
@@ -115,6 +119,9 @@ namespace LUIS_pizzaorder.Controllers
             }
        }
 
-        
+
+        //Login
+
+        //LogOut
     }
 }

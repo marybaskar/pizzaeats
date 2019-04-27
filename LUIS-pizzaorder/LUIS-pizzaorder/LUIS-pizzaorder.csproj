@@ -150,13 +150,11 @@
     <Compile Include="Models\credit_card.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Extended\pizza.cs" />
     <Compile Include="Models\Extended\user.cs" />
     <Compile Include="Models\LUIS.cs" />
     <Compile Include="Models\pizza.cs">
       <DependentUpon>PizzaEatsDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PizzaContext.cs" />
     <Compile Include="Models\UserContext.cs" />
     <Compile Include="Models\PizzaEatsDB.Context.cs">
       <AutoGen>True</AutoGen>
@@ -213,7 +211,8 @@
       <DependentUpon>PizzaEatsDB.edmx</DependentUpon>
       <LastGenOutput>PizzaEatsDB.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap-4.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.2.min.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\PizzaEatsDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -223,6 +222,7 @@
       <DependentUpon>PizzaEatsDB.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -252,7 +252,7 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\UserDashBoard.cshtml" />
     <Content Include="Views\Home\Topping.cshtml" />
-    <Content Include="Views\Home\Submitted.cshtml" />
+    <Content Include="Views\User\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

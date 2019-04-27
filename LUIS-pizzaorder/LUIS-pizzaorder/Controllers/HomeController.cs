@@ -180,8 +180,7 @@ namespace LUIS_pizzaorder.Controllers
                 dc.SaveChanges();
             }
 
-
-            return RedirectToAction("Submitted");
+            return View("Submitted");
         }
         public ActionResult Submitted()
         {

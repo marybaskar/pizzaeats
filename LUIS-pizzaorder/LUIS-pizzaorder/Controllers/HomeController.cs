@@ -11,72 +11,9 @@ namespace LUIS_pizzaorder.Controllers
 {
     public class HomeController : Controller
     {
-        public async Task<ActionResult> HomeStart(string String)
+        public ActionResult HomeStart()
         {
-            {
-                Query Return = new Query();
-                //the entities
-
-                //the intents
-
-                try
-                {
-                    if (String != null)
-                    {
-                        LUIS objLUISResult = await QueryLUIS(String);
-                        //if (theIntent.intent == "pizzaOrder")
-                        //{
-                        //Response.Write("<script>alert('You want to order')</script>");
-
-                        foreach (var item in objLUISResult.entities)
-                        {
-                            if (item.type == "size") { Return.Size = item.entity; }
-                            if (item.type == "topping") { Return.Topping = item.entity; }
-                            if (item.type == "topping2") { Return.Topping2 = item.entity; }
-                            if (item.type == "topping3") { Return.Topping3 = item.entity; }
-                            if (item.type == "builtin.number") { Return.Number = item.entity; }
-                        }
-                        //return View(Return);
-                        //}
-                        var theIntent = objLUISResult.topScoringIntent;
-                        if (theIntent.intent == null)
-                        {
-                            Response.Write("<script>alert('error ai')</script>");
-                        }
-                        if (theIntent.intent == "Order")
-                        {
-                            //ViewBag.Message = string.Format("Your want to order pizza");
-                            return View("~/Views/Home/Order.cshtml");
-
-                        }
-
-                        else if (theIntent.intent == "LogIn")
-                        {
-                            //ViewBag.Message = string.Format("Your want to Login")
-                            return View("~/Views/User/Login.cshtml");
-                        }
-                        else if (theIntent.intent == "SignUp")
-                        {
-                            //ViewBag.Message = string.Format("Your want to create an account");
-                            return View("~/Views/User/Registration.cshtml");
-                        }
-                        else if (/*theIntent.intent == "None" ||*/ theIntent.intent == "Greeting")
-                        {
-                            Response.Write("<script>alert('Please enter what you want to do related to pizza ordering. Thanks!')</script>");
-                            //ViewBag.Message = string.Format("Okay... please enter what you want to do related to pizza ordering. Thanks!");
-
-                        }
-                        Console.Clear();
-                    }
-                    return View(Return);
-                }
-                catch (Exception ex)
-                {
-                    ModelState.AddModelError(string.Empty, "Error: " + ex);
-                    return View(Return);
-                }
-                
-            }
+            return View();
         }
         public async Task<ActionResult> Index(string String)
         {

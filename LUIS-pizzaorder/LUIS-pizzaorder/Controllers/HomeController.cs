@@ -46,7 +46,7 @@ namespace LUIS_pizzaorder.Controllers
                     if (theIntent.intent == "Order")
                     {
                         //ViewBag.Message = string.Format("Your want to order pizza");
-                        return View("~/Views/Home/Order.cshtml");
+                        return View("~/Views/Home/Index.cshtml");
 
                     }
 
@@ -111,7 +111,7 @@ namespace LUIS_pizzaorder.Controllers
                     if (theIntent.intent == "Order")
                     {
                         //ViewBag.Message = string.Format("Your want to order pizza");
-                        return View("~/Views/Home/Order.cshtml");
+                        return View("~/Views/Home/Index.cshtml");
 
                     }
 

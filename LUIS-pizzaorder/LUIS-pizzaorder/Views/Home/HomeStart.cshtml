@@ -4,7 +4,7 @@
     ViewBag.Title = "HomeStart";
 }
 
-<h2>Home</h2>
+
 
 <html lang="en">
 <head>
@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h1 class="text-center">Welcome To Pizza Eats</h1>
-                        <p class="text-center">If you would like to navigate through our site please type the name of the page Or click one of these icons!</p>
+                        <p class="text-center">If you would like to navigate through our site please type the name of the page or click one of these Icons!</p>
                         
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
@@ -33,9 +33,7 @@
                                 </div>
                             </div>
                        
-                        <p class="text-center">
-                            <a class="btn btn-primary btn-lg" href="#" role="button"></a>
-                        </p>
+                        
                     </div>
                 </div>
             </div>
@@ -52,18 +50,18 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center">
                     <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="@Url.Content("~/Content/img/vector-signin.png")" data-holder-rendered="true">
-                    <h3>Registration</h3>
-                    <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Registration") »</a></p>
+                    <h3>Login</h3>
+                    <p><a class="btn btn-link" @Html.ActionLink("Click Here",  "Login", "User") »</a></p>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center">
                     <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="@Url.Content("~/Content/img/vector-signUp.png")" data-holder-rendered="true">
                     <h3>Sign Up</h3>
-                    <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Registration") »</a></p>
+                    <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Registration","User") »</a></p>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-                    <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="@Url.Content("~/Content/img/vector-checkout.png")" data-holder-rendered="true">
-                    <h3>Checkout</h3>
-                    <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Login") »</a></p>
+                    <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="@Url.Content("~/Content/img/vector-placeOrder.png")" data-holder-rendered="true">
+                    <h3>Place Order</h3>
+                    <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Index") »</a></p>
                 </div>
             </div>
         </div>

@@ -12,28 +12,28 @@
     @using (Html.BeginForm())
     {
         <div class="row">
-            <h1>Please Choose pizza number:</h1>
+            <h3>Please Choose Pizza Number:</h3>
 
 
             <div class="col-md-4">
 
 
-                <label>@Html.RadioButton("Number", "1",true) 1 </label>
+                <label>@Html.RadioButton("Number", "1",true) one </label>
 
-                <label>@Html.RadioButton("Number", "2") 2 </label>
+                <label>@Html.RadioButton("Number", "2") Two </label>
 
-                <label>@Html.RadioButton("Number", "3") 3 </label>
+                <label>@Html.RadioButton("Number", "3") Three </label>
 
-                <label>@Html.RadioButton("Number", "4") 4 </label>
+                <label>@Html.RadioButton("Number", "4") Four </label>
 
-                <label>@Html.RadioButton("Number", "4") 5 </label>
+                <label>@Html.RadioButton("Number", "5") Five </label>
                 <br />
 
             </div>
         </div>
         <div class="row">
 
-            <h1>Please Choose Pizza Size:</h1>
+            <h3>Please Choose Pizza Size:</h3>
             <div class="col-md-4">
 
                 <label>@Html.RadioButton("Size", "Small") Small</label>
@@ -44,9 +44,57 @@
 
                 <label>@Html.RadioButton("Size", "Large") large </label>
                 <br />
-                <input type="button" onclick="CheckSelected()" value="continue">
-                @section Scripts{
-                    <script type="text/javascript">
+                
+            </div>
+        </div>
+        <div class="row">
+            <h3>Please Choose one or more Topping:</h3>
+
+
+            <div class="col-md-4">
+                <h4>Cheese Topping:</h4>
+
+                <label>@Html.RadioButton("Topping", "Blue Cheese") Blue Cheese</label>
+                <br />
+                <label>@Html.RadioButton("Topping", "Feta") Feta </label>
+                <br />
+                <label>@Html.RadioButton("Topping", "Pepper Jack") Pepper Jack</label>
+                <br />
+                <label>@Html.RadioButton("Toppin", "Mozzarella") Mozzarella</label>
+                <br />
+
+            </div>
+            <div class="col-md-4">
+                <h4>Meat Topping:</h4>
+
+                <label>@Html.RadioButton("Topping2", "Chicken") Chicken</label>
+                <br />
+                <label>@Html.RadioButton("Topping2", "Turkey") Turkey </label>
+                <br />
+                <label>@Html.RadioButton("Topping2", "Shrimp") Shrimp </label>
+                <br />
+                <label>@Html.RadioButton("Topping2", "Steak") Steak </label>
+                <br />
+                <label>@Html.RadioButton("Topping2", "Lamb") Lamb </label>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <h4>Vegetable Topping:</h4>
+
+                <label>@Html.RadioButton("Topping3", "Olives") Olives</label>
+                <br />
+                <label>@Html.RadioButton("Topping3", "Peppers") Peppers </label>
+                <br />
+                <label>@Html.RadioButton("Topping3", "Mushrooms") Mushrooms </label>
+                <br />
+                <label>@Html.RadioButton("Topping3", "Spinach") Spinach </label>
+                <br />
+            </div>
+            
+        </div>
+            <input type="button" onclick="CheckSelected()" value="continue">
+            @section Scripts{
+                <script type="text/javascript">
                     	function CheckSelected() {
                         	var selected = $("input[name='Size']:checked").val();
                         	var selectedTopping = $("input[name='Topping']:checked").val();
@@ -66,54 +114,9 @@
 
                     	}
 
-                    </script>
-                }
-            </div>
-        </div>
-        <div class="row">
-            <h1>Please Choose one or more Topping:</h1>
-
-
-            <div class="col-md-4">
-                <h1>Cheese Topping:</h1>
-
-                <label>@Html.RadioButton("Topping", "Blue Cheese") Blue Cheese</label>
-                <br />
-                <label>@Html.RadioButton("Topping", "Feta") Feta </label>
-                <br />
-                <label>@Html.RadioButton("Topping", "Pepper Jack") Pepper Jack</label>
-                <br />
-                <label>@Html.RadioButton("Toppin", "Mozzarella") Mozzarella</label>
-                <br />
-
-            </div>
-            <div class="col-md-4">
-                <h1>Meat Topping:</h1>
-
-                <label>@Html.RadioButton("Topping2", "Chicken") Chicken</label>
-                <br />
-                <label>@Html.RadioButton("Topping2", "Turkey") Turkey </label>
-                <br />
-                <label>@Html.RadioButton("Topping2", "Shrimp") Shrimp </label>
-                <br />
-                <label>@Html.RadioButton("Topping2", "Steak") Steak </label>
-                <br />
-                <label>@Html.RadioButton("Topping2", "Lamb") Lamb </label>
-                <br />
-            </div>
-            <div class="col-md-4">
-                <h1>Vegetable Topping:</h1>
-
-                <label>@Html.RadioButton("Topping3", "Olives") Olives</label>
-                <br />
-                <label>@Html.RadioButton("Topping3", "Peppers") Peppers </label>
-                <br />
-                <label>@Html.RadioButton("Topping3", "Mushrooms") Mushrooms </label>
-                <br />
-                <label>@Html.RadioButton("Topping3", "Spinach") Spinach </label>
-                <br />
-            </div>
-        </div>
+                </script>
+            }
+        
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 @Html.TextBox("String",null,

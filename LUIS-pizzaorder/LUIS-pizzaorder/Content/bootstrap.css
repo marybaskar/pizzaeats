@@ -4283,7 +4283,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-decoration: none;
 }
 .navbar-brand > img {
-  display: block;
+  background:url(img/pizza-icon.png)
+  
 }
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
@@ -4589,10 +4590,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
+  background-color: #a94442;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
+
   color: #9d9d9d;
 }
 .navbar-inverse .navbar-brand:hover,

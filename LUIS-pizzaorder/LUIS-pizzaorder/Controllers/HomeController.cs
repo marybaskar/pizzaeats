@@ -42,7 +42,10 @@ namespace LUIS_pizzaorder.Controllers
                     //return View(Return);
                     //}
                     var theIntent = objLUISResult.topScoringIntent;
-
+                    if(theIntent.intent==null)
+                    {
+                        Response.Write("<script>alert('error ai')</script>");
+                    }
                     if (theIntent.intent == "Order")
                     {
                         //ViewBag.Message = string.Format("Your want to order pizza");

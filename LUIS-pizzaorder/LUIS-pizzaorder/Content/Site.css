@@ -26,10 +26,13 @@ textarea {
     max-width: 280px;
 }
 
+.firstlabel{
+    margin-right:50px;
+}
 .image {
     background: url(img/vector-signin.png);
 }
 
 .wide {
-    width: 1000px;
+    width:100%;
 } 

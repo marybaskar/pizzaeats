@@ -24,11 +24,8 @@
                     <li>@Html.ActionLink("Place Order", "Index", "Home")</li>
                     @if (Session["UserName"] == null)
                     {
-
-                        <li>@Html.ActionLink("Sign Up", "Registration", "User")</li>
-                        <a href="/Home/Home" class="navbar-brand"><img src="~/Content/img/login_1.png" alt="login" width="20" height="20" /></a>
+                        <li>@Html.ActionLink("Register", "Registration", "User")</li>
                         <li>@Html.ActionLink("Log In", "Login", "User")</li>
-                        <a href="/Home/Home" class="navbar-brand"><img src="~/Content/img/g-icon.png" alt="login" width="20" height="20" /></a>
                     }
 
                     @if (Session["UserName"] != null)
@@ -46,7 +43,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Pizza Eats </p>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
 

@@ -12,14 +12,14 @@
     @using (Html.BeginForm())
     {
         @*if (ViewBag.SizeStatus == false)
-        {
-            <script type="text/javascript">
-                window.onload = function () {
-                    alert("@ViewBag.Message");
-                };
-            </script>
+            {
+                <script type="text/javascript">
+                    window.onload = function () {
+                        alert("@ViewBag.Message");
+                    };
+                </script>
 
-        }*@
+            }*@
         <div class="row">
             <h3>Please Choose Pizza Number:</h3>
 
@@ -27,7 +27,7 @@
             <div class="col-md-4">
 
 
-                <label>@Html.RadioButton("Number", "1") 1 </label>
+                <label>@Html.RadioButton("Number", "1", true) 1 </label>
 
                 <label>@Html.RadioButton("Number", "2") 2 </label>
 
@@ -42,7 +42,7 @@
         <div class="row">
 
             <h1>Please Choose Pizza Size:</h1>
-            
+
             <div class="col-md-4">
 
                 <label>@Html.RadioButton("Size", "Small") Small</label>
@@ -53,7 +53,7 @@
 
                 <label>@Html.RadioButton("Size", "Large") large </label>
                 <br />
-                
+
             </div>
         </div>
         <div class="row">
@@ -99,33 +99,38 @@
                 <label>@Html.RadioButton("Topping3", "Spinach") Spinach </label>
                 <br />
             </div>
-            
+
         </div>
-            <input type="button" onclick="CheckSelected()" value="continue">
-            @section Scripts{
-                <script type="text/javascript">
+        <input type="button" onclick="CheckSelected()" value="continue">
+        @section Scripts{
+            <script type="text/javascript">
                     	function CheckSelected() {
                         	var selected = $("input[name='Size']:checked").val();
                         	var selectedTopping = $("input[name='Topping']:checked").val();
                         	var selectedTopping2 = $("input[name='Topping2']:checked").val();
                         	var selectedTopping3 = $("input[name='Topping3']:checked").val();
-                        	var selectedNum = $("input[name='Number']:checked").val();
+                        	//var numberOfPizza = $("@Model.Number");
                         	//alert("size: " + selected + " topping: " + selectedTopping + " " + selectedTopping2 + " " + selectedTopping3 );
-                        	$.ajax({
-                            	type: "POST",
-                            	data: { size: selected, cTopping: selectedTopping, mTopping: selectedTopping2, vTopping: selectedTopping3, num:selectedNum },
-                            	url: '@Url.Action("SubmitPizza", "Home")',
-                            	async: true,
-                            	error: function () {
-                                	alert('Error Occured');
-                            	}
-                        	});
+                            if (selected) {
+                                alert('Your order has been submitted!');
+                                $.ajax({
+                                    type: "POST",
+                                    data: { size: selected, cTopping: selectedTopping, mTopping: selectedTopping2, vTopping: selectedTopping3 },
+                                    url: '@Url.Action("HomeStart", "Home")',
+                                    async: true,
+                                    error: function () {
+                                        alert('Error Occured');
+                                    }
+                                });
+                            }
+                            if (selected == null) { alert('Please enter a size');}
 
                     	}
 
-                </script>
-            }
-        
+            </script>
+        }
+
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 @Html.TextBox("String",null,

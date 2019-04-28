@@ -105,8 +105,9 @@ namespace LUIS_pizzaorder.Controllers
         }
 
         [HttpPost]
-        public ActionResult SubmitPizza( string size, string cTopping, string mTopping, string vTopping)
+        public ActionResult SubmitPizza( string size, string cTopping, string mTopping, string vTopping, string num)
         {
+            ViewBag.SizeStatus=true;
             pizza orderedPizza = new pizza();
 
             string pizzaSize=null;
@@ -126,9 +127,14 @@ namespace LUIS_pizzaorder.Controllers
                     pizzaSize = "L";
                     break;
                 default:
+                    ViewBag.SizeStatus = false;
                     break;
             }
-
+            if(ViewBag.SizeStatus == false)
+            {
+                Response.Write("<script>alert('A size must be chosen!')</script>");
+                return View("Index");
+            }
             switch (cTopping)
             {
                 case "Blue Cheese":

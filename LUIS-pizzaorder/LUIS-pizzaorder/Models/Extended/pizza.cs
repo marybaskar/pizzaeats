@@ -12,6 +12,7 @@ namespace LUIS_pizzaorder.Models
         
         public int pizza_id { get; set; }
 
+        
         public string size { get; set; }
 
         public Nullable<int> cheese_topping { get; set; }

@@ -11,6 +11,15 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @using (Html.BeginForm())
     {
+        @*if (ViewBag.SizeStatus == false)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    alert("@ViewBag.Message");
+                };
+            </script>
+
+        }*@
         <div class="row">
             <h1>Please Choose pizza number:</h1>
 
@@ -26,7 +35,7 @@
 
                 <label>@Html.RadioButton("Number", "4") 4 </label>
 
-                <label>@Html.RadioButton("Number", "4") 5 </label>
+                <label>@Html.RadioButton("Number", "5") 5 </label>
                 <br />
 
             </div>
@@ -34,6 +43,7 @@
         <div class="row">
 
             <h1>Please Choose Pizza Size:</h1>
+            
             <div class="col-md-4">
 
                 <label>@Html.RadioButton("Size", "Small") Small</label>
@@ -51,12 +61,13 @@
                         	var selected = $("input[name='Size']:checked").val();
                         	var selectedTopping = $("input[name='Topping']:checked").val();
                         	var selectedTopping2 = $("input[name='Topping2']:checked").val();
-                        	var selectedTopping3 = $("input[name='Topping3']:checked").val();
-                        	//var numberOfPizza = $("@Model.Number");
+                            var selectedTopping3 = $("input[name='Topping3']:checked").val();
+                            var selectedNum = $("input[name='Number']:checked").val();
+
                         	//alert("size: " + selected + " topping: " + selectedTopping + " " + selectedTopping2 + " " + selectedTopping3 );
                         	$.ajax({
                             	type: "POST",
-                            	data: { size: selected, cTopping: selectedTopping, mTopping: selectedTopping2, vTopping: selectedTopping3 },
+                            	data: { size: selected, cTopping: selectedTopping, mTopping: selectedTopping2, vTopping: selectedTopping3, num:selectedNum },
                             	url: '@Url.Action("SubmitPizza", "Home")',
                             	async: true,
                             	error: function () {
@@ -129,6 +140,7 @@
         <div class="col-md-10">
             @Html.DisplayFor(model => model.Size,
         new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">

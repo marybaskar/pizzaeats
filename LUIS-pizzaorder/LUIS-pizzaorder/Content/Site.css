@@ -1,6 +1,9 @@
 ﻿body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
     padding-top: 50px;
     padding-bottom: 20px;
+    color: #4E4D59;
 }
 
 /* Set padding to keep content from hitting the edges */

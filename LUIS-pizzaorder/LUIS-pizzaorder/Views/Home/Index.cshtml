@@ -21,7 +21,7 @@
 
         }*@
         <div class="row">
-            <h1>Please Choose pizza number:</h1>
+            <h3>Please Choose Pizza Number:</h3>
 
 
             <div class="col-md-4">
@@ -31,7 +31,6 @@
 
                 <label>@Html.RadioButton("Number", "2") 2 </label>
 
-                <label>@Html.RadioButton("Number", "3") 3 </label>
 
                 <label>@Html.RadioButton("Number", "4") 4 </label>
 
@@ -54,39 +53,15 @@
 
                 <label>@Html.RadioButton("Size", "Large") large </label>
                 <br />
-                <input type="button" onclick="CheckSelected()" value="continue">
-                @section Scripts{
-                    <script type="text/javascript">
-                    	function CheckSelected() {
-                        	var selected = $("input[name='Size']:checked").val();
-                        	var selectedTopping = $("input[name='Topping']:checked").val();
-                        	var selectedTopping2 = $("input[name='Topping2']:checked").val();
-                            var selectedTopping3 = $("input[name='Topping3']:checked").val();
-                            var selectedNum = $("input[name='Number']:checked").val();
-
-                        	//alert("size: " + selected + " topping: " + selectedTopping + " " + selectedTopping2 + " " + selectedTopping3 );
-                        	$.ajax({
-                            	type: "POST",
-                            	data: { size: selected, cTopping: selectedTopping, mTopping: selectedTopping2, vTopping: selectedTopping3, num:selectedNum },
-                            	url: '@Url.Action("SubmitPizza", "Home")',
-                            	async: true,
-                            	error: function () {
-                                	alert('Error Occured');
-                            	}
-                        	});
-
-                    	}
-
-                    </script>
-                }
+                
             </div>
         </div>
         <div class="row">
-            <h1>Please Choose one or more Topping:</h1>
+            <h3>Please Choose one or more Topping:</h3>
 
 
             <div class="col-md-4">
-                <h1>Cheese Topping:</h1>
+                <h4>Cheese Topping:</h4>
 
                 <label>@Html.RadioButton("Topping", "Blue Cheese") Blue Cheese</label>
                 <br />
@@ -99,7 +74,7 @@
 
             </div>
             <div class="col-md-4">
-                <h1>Meat Topping:</h1>
+                <h4>Meat Topping:</h4>
 
                 <label>@Html.RadioButton("Topping2", "Chicken") Chicken</label>
                 <br />
@@ -113,7 +88,7 @@
                 <br />
             </div>
             <div class="col-md-4">
-                <h1>Vegetable Topping:</h1>
+                <h4>Vegetable Topping:</h4>
 
                 <label>@Html.RadioButton("Topping3", "Olives") Olives</label>
                 <br />
@@ -124,7 +99,33 @@
                 <label>@Html.RadioButton("Topping3", "Spinach") Spinach </label>
                 <br />
             </div>
+            
         </div>
+            <input type="button" onclick="CheckSelected()" value="continue">
+            @section Scripts{
+                <script type="text/javascript">
+                    	function CheckSelected() {
+                        	var selected = $("input[name='Size']:checked").val();
+                        	var selectedTopping = $("input[name='Topping']:checked").val();
+                        	var selectedTopping2 = $("input[name='Topping2']:checked").val();
+                        	var selectedTopping3 = $("input[name='Topping3']:checked").val();
+                        	var selectedNum = $("input[name='Number']:checked").val();
+                        	//alert("size: " + selected + " topping: " + selectedTopping + " " + selectedTopping2 + " " + selectedTopping3 );
+                        	$.ajax({
+                            	type: "POST",
+                            	data: { size: selected, cTopping: selectedTopping, mTopping: selectedTopping2, vTopping: selectedTopping3, num:selectedNum },
+                            	url: '@Url.Action("SubmitPizza", "Home")',
+                            	async: true,
+                            	error: function () {
+                                	alert('Error Occured');
+                            	}
+                        	});
+
+                    	}
+
+                </script>
+            }
+        
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 @Html.TextBox("String",null,

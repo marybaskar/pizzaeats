@@ -39,8 +39,8 @@ namespace JSONUtils
     }
     
     public class Query
-    {
-        [Required(ErrorMessage = "Pizza Size Required")]
+    {    
+        
         public string Size { get; set; }
 
         [Display(Name ="Cheese Topping")]

@@ -133,6 +133,7 @@ namespace LUIS_pizzaorder.Controllers
                     ViewBag.SizeStatus = false;
                     break;
             }
+
             if (ViewBag.SizeStatus == false)
             {
                 Response.Write("<script>alert('A size must be chosen!')</script>");

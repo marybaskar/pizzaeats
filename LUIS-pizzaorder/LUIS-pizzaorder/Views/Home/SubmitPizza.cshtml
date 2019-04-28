@@ -5,12 +5,21 @@
 
 <h2>Order Pizza</h2>
 <fieldset>
+    @if (Session["UserID"] != null)
+    {
+        <h2>
+            Order Submitted!
+            Pizza will be sent to ||Saved Address|| when PizzaEats diriver is on their way, you will be contacted at ||Saved Number||
+        </h2>
+    }
+    else
+    {
+        <h2>
 
-    <h2>
-        Order Submitted!
-        Pizza will be sent to ||Saved Address|| when PizzaEats diriver is on their way, you will be contacted at ||Saved Number||
-    </h2>
-    
+        </h2>
+    }
+
+
 
 </fieldset>
 

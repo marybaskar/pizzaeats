@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LUIS_pizzaorder.Models
 {
@@ -15,5 +16,8 @@ namespace LUIS_pizzaorder.Models
         public int pizza_id { get; set; }
 
         public decimal total { get; set; }
+
+        [NotMapped]
+        public virtual user user { get; set; }
     }
 }

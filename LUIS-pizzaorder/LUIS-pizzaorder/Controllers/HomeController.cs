@@ -107,16 +107,16 @@ namespace LUIS_pizzaorder.Controllers
             return LUISResult;
         }
 
-        [HttpPost]
-        public ActionResult SubmitPizza( string size, string cTopping, string mTopping, string vTopping, string num)
+
+        public ActionResult SubmitPizza(string size, string cTopping, string mTopping, string vTopping, string num)
         {
-            ViewBag.SizeStatus=true;
+            ViewBag.SizeStatus = true;
             pizza orderedPizza = new pizza();
 
-            string pizzaSize=null;
-            Nullable<int> toppingCheese=null;
-            Nullable<int> toppingMeat=null;
-            Nullable<int> toppingVeg=null;
+            string pizzaSize = null;
+            Nullable<int> toppingCheese = null;
+            Nullable<int> toppingMeat = null;
+            Nullable<int> toppingVeg = null;
 
             switch (size)
             {
@@ -133,7 +133,7 @@ namespace LUIS_pizzaorder.Controllers
                     ViewBag.SizeStatus = false;
                     break;
             }
-            if(ViewBag.SizeStatus == false)
+            if (ViewBag.SizeStatus == false)
             {
                 Response.Write("<script>alert('A size must be chosen!')</script>");
                 return View("Index");
@@ -192,26 +192,67 @@ namespace LUIS_pizzaorder.Controllers
             orderedPizza.cheese_topping = toppingCheese;
             orderedPizza.meat_topping = toppingMeat;
             orderedPizza.veg_topping = toppingVeg;
+            double total = 0;
             using (PizzaContext dc = new PizzaContext())
             {
                 dc.pizzas.Add(orderedPizza);
                 dc.SaveChanges();
+                var query = dc
+                    .sizes
+                    .Where(a => a.name == orderedPizza.size)
+                    .Select(a => a.price)
+                    .SingleOrDefault();
+                //var query = from x in dc.sizes
+                //            where x.name == orderedPizza.size
+                //            select x.price;
+                total += double.Parse(query.ToString());
+                if (toppingCheese != null)
+                {
+                    var tquery = dc
+                    .topping_cheese
+                    .Where(a => a.t_id == orderedPizza.cheese_topping)
+                    .Select(a => a.price)
+                    .SingleOrDefault();
+                    total += double.Parse(tquery.ToString());
+                }
+                if (toppingMeat != null)
+                {
+                    var tquery = dc
+                    .topping_meat
+                    .Where(a => a.t_id == orderedPizza.meat_topping)
+                    .Select(a => a.price)
+                    .SingleOrDefault();
+                    total += double.Parse(tquery.ToString());
+                }
+                if (toppingVeg != null)
+                {
+                    var tquery = dc
+                     .topping_veg
+                     .Where(a => a.t_id == orderedPizza.veg_topping)
+                     .Select(a => a.price)
+                     .SingleOrDefault();
+                    total += double.Parse(tquery.ToString());
+                }
             }
             Session["Pizza"] = orderedPizza.pizza_id.ToString();
             if (Session["UserID"] != null)
             {
                 user_order _Order = new user_order();
+                
                 _Order.user_id = Int32.Parse(Session["UserID"].ToString());
                 _Order.pizza_id = orderedPizza.pizza_id;
-                //_Order.total = 
+                _Order.total = (decimal)total;
                 using (User_OrderContext db = new User_OrderContext())
                 {
-                   //connect pizza to user and calculate total
+                    db.user_order.Add(_Order);
+                    db.SaveChanges();
+
                 }
             }
-            
+            ViewBag.Total = total;
+
             return View();
         }
-        
+
     }
 }

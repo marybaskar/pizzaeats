@@ -18,6 +18,10 @@ namespace LUIS_pizzaorder.Models
         }
 
         public virtual DbSet<pizza> pizzas { get; set; }
+        public virtual DbSet<size> sizes { get; set; }
+        public virtual DbSet<topping_cheese> topping_cheese { get; set; }
+        public virtual DbSet<topping_meat> topping_meat { get; set; }
+        public virtual DbSet<topping_veg> topping_veg { get; set; }
 
     }
 }

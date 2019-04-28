@@ -455,7 +455,6 @@ D:\installations\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\Antlr3.Runtime.pd
 D:\installations\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\System.Diagnostics.DiagnosticSource.xml
 D:\installations\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 D:\installations\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\installations\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.csprojAssemblyReference.cache
 D:\installations\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.csproj.CoreCompileInputs.cache
 D:\installations\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.csproj.CopyComplete
 D:\installations\pizzaeats\LUIS-pizzaorder\LUIS-pizzaorder\obj\Debug\LUIS-pizzaorder.dll

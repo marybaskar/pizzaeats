@@ -1,5 +1,4 @@
-﻿@model LUIS_pizzaorder.Models.user
-
+﻿@model JSONUtils.Query
 @{
     ViewBag.Title = "HomeStart";
 }
@@ -23,25 +22,25 @@
                     <div class="col-12">
                         <h1 class="text-center">Welcome To Pizza Eats</h1>
                         <p class="text-center">If you would like to navigate through our site please type the name of the page or click one of these Icons!</p>
-                        
+
+                        @using (Html.BeginForm())
+                        {
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
                                     <center>
-                                        @Html.TextBox("String",null,new { style = "width: 900px;" }) <input type="submit" value="Enter" id="txt" placeholder="Naviagte Site Using Search Bar!" />
+                                        @Html.TextBox("String", null, new { style = "width: 900px;" }) <input type="submit" value="Enter" id="txt" placeholder="Naviagte Site Using Search Bar!" />
                                     </center>
-                                   
+
                                 </div>
                             </div>
-                       
-                        
-                    </div>
+                        }
+
+                        </div>
                 </div>
             </div>
         </div>
     </header>
-    <section>
-
-    </section>
+    <section></section>
     <section>
         <div class="container">
             <div class="row"> </div>

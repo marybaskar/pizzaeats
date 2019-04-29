@@ -22,13 +22,13 @@
                 <div class="row">
                     <div class="col-12">
                         <h1 class="text-center">Welcome To Pizza Eats</h1>
-                        <p class="text-center">If you would like to navigate through our site please type the name of the page or click one of these Icons!</p>
+                        <p class="text-center">If you would like to navigate through our site please type the name of the page or click one of these icons below!</p>
                         @using (Html.BeginForm())
                         {
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
                                     <center>
-                                        @Html.TextBox("String", null, new { @class = "wide", @placeholder = "Naviagte Site Using Search Bar!" }) <input type="submit" value="Search" color="#007ad7" id="txt" />
+                                        @Html.TextBox("String", null, new { @class = "wide", @placeholder = "Search here to navigate through our site!" }) <input type="submit" value="Search" color="#007ad7" id="txt" />
                                     </center>
 
                                 </div>
@@ -52,12 +52,12 @@
                     <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Login", "User") »</a></p>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-                    <img class="rounded-circle" alt="100x100" style="width: 100px; height: 100px;" src="@Url.Content("~/Content/img/vector-signUp.png")" data-holder-rendered="true">
+                    <img class="rounded-circle" alt="100x100" style="width: 100px; height: 100px;" src="@Url.Content("~/Content/img/vector-signU.png")" data-holder-rendered="true">
                     <h3>Sign Up</h3>
                     <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Registration", "User") »</a></p>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-                    <img class="rounded-circle" alt="100x100" style="width: 100px; height: 100px;" src="@Url.Content("~/Content/img/vector-placeOrder.png")" data-holder-rendered="true">
+                    <img class="rounded-circle" alt="100x100" style="width: 100px; height: 100px;" src="@Url.Content("~/Content/img/vector-placeO.png")" data-holder-rendered="true">
                     <h3>Place Order</h3>
                     <p><a class="btn btn-link" @Html.ActionLink("Click Here", "Index") »</a></p>
                 </div>

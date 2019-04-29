@@ -3,12 +3,13 @@
 
 @{
     ViewBag.Title = "PlaceOrder";
-    
+
 }
 <br />
 
 <div class="form-horizontal">
     <h2>Pizza Eats Mneu: </h2>
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @using (Html.BeginForm())
     {
@@ -19,7 +20,7 @@
             <div class="col-md-4">
 
 
-                <label>@Html.RadioButton("Number", "1",true) one </label>
+                <label>@Html.RadioButton("Number", "1", true) one </label>
 
                 <label>@Html.RadioButton("Number", "2") Two </label>
 
@@ -37,15 +38,15 @@
             <h3>Please Choose Pizza Size:</h3>
             <div class="col-md-4">
 
-                <label>@Html.RadioButton("Size", "Small") Small &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| $10.00</label>
+                <label>@Html.RadioButton("Size", "Small") Small &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| $10.00</label>
                 <br />
 
-                <label>@Html.RadioButton("Size", "Medium") Medium &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | $12.00 </label>
+                <label>@Html.RadioButton("Size", "Medium") Medium &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| $12.00 </label>
                 <br />
 
-                <label>@Html.RadioButton("Size", "Large") large &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         | $14.00</label>
+                <label>@Html.RadioButton("Size", "Large") large &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| $14.00</label>
                 <br />
-                
+
             </div>
         </div>
         <div class="row">
@@ -55,54 +56,54 @@
             <div class="col-md-4">
                 <h4>Cheese Topping:</h4>
 
-                <label>@Html.RadioButton("Topping", "Blue Cheese") Blue Cheese | add $0.25</label>
+                <label>@Html.RadioButton("Topping", "Blue Cheese") Blue Cheese &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.25</label>
                 <br />
-                <label>@Html.RadioButton("Topping", "Feta") Feta | add $0.25</label>
+                <label>@Html.RadioButton("Topping", "Feta") Feta &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.25</label>
                 <br />
-                <label>@Html.RadioButton("Topping", "Pepper Jack") Pepper Jack | add $0.25</label>
+                <label>@Html.RadioButton("Topping", "Pepper Jack") Pepper Jack &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.25</label>
                 <br />
-                <label>@Html.RadioButton("Toppin", "Mozzarella") Mozzarella | add $0.25</label>
+                <label>@Html.RadioButton("Toppin", "Mozzarella") Mozzarella  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.25</label>
                 <br />
 
             </div>
             <div class="col-md-4">
                 <h4>Meat Topping:</h4>
 
-                <label>@Html.RadioButton("Topping2", "Chicken") Chicken | add $1.00</label>
+                <label>@Html.RadioButton("Topping2", "Chicken") Chicken &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $1.00</label>
                 <br />
-                <label>@Html.RadioButton("Topping2", "Turkey") Turkey | add $1.00</label>
+                <label>@Html.RadioButton("Topping2", "Turkey") Turkey &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $1.00</label>
                 <br />
-                <label>@Html.RadioButton("Topping2", "Shrimp") Shrimp | add $1.00</label>
+                <label>@Html.RadioButton("Topping2", "Shrimp") Shrimp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $1.00</label>
                 <br />
-                <label>@Html.RadioButton("Topping2", "Steak") Steak | add $1.00 </label>
+                <label>@Html.RadioButton("Topping2", "Steak") Steak &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $1.00 </label>
                 <br />
-                <label>@Html.RadioButton("Topping2", "Lamb") Lamb | add $1.00 </label>
+                <label>@Html.RadioButton("Topping2", "Lamb") Lamb &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $1.00 </label>
                 <br />
             </div>
             <div class="col-md-4">
                 <h4>Vegetable Topping:</h4>
 
-                <label>@Html.RadioButton("Topping3", "Olives") Olives | add $0.5</label>
+                <label>@Html.RadioButton("Topping3", "Olives") Olives &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.50</label>
                 <br />
-                <label>@Html.RadioButton("Topping3", "Peppers") Peppers | add $0.5</label>
+                <label>@Html.RadioButton("Topping3", "Peppers") Peppers &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.50</label>
                 <br />
-                <label>@Html.RadioButton("Topping3", "Mushrooms") Mushrooms | add $0.5</label>
+                <label>@Html.RadioButton("Topping3", "Mushrooms") Mushrooms &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.50</label>
                 <br />
-                <label>@Html.RadioButton("Topping3", "Spinach") Spinach | add $</label>
+                <label>@Html.RadioButton("Topping3", "Spinach") Spinach &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.50</label>
                 <br />
             </div>
-            
+
         </div>
-            <input type="button" onclick="CheckSelected()" value="continue" color="#007AD7">
-            @section Scripts{
-                <script type="text/javascript">
+
+        @section Scripts{
+            <script type="text/javascript">
                     	function CheckSelected() {
                         	var selected = $("input[name='Size']:checked").val();
                         	var selectedTopping = $("input[name='Topping']:checked").val();
                         	var selectedTopping2 = $("input[name='Topping2']:checked").val();
                         	var selectedTopping3 = $("input[name='Topping3']:checked").val();
                             var selectedNum = $("input[name='Number']:checked").val();
-                            
+
                         	//alert("size: " + selected + " topping: " + selectedTopping + " " + selectedTopping2 + " " + selectedTopping3 );
                         	if (selected) {
                                 alert('Your order has been submitted!');
@@ -120,16 +121,18 @@
 
                     	}
 
-                </script>
-            }
-        
-        
-                <center>
-                    @Html.TextBox("String",null,
-                new { @class = "wide", @placeholder = "Your Pizza Order:(ie-Size,Topping&quantity!" }) <input type="submit" value="Enter" id="txt" />
-                </center>
+            </script>
+        }
 
-           
+
+        <center>
+            @Html.TextBox("String",null,
+        new { @class = "wide", @placeholder = "Your Pizza Order:" })
+            <input type="submit" value="Enter" id="txt" />
+            <div style="float:right;"><input type="button" onclick="CheckSelected()" value="Continue>>" style="background-color:#007ad7"></div>
+        </center>
+
+
     }
     <div class="form-group">
         @Html.LabelFor(model => model.Size,
@@ -171,5 +174,5 @@
         new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
-   
+
 </div>

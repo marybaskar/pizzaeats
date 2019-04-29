@@ -1619,6 +1619,7 @@ pre code {
   min-height: 1px;
   padding-right: 5px;
   padding-left: 5px;
+ 
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -2632,6 +2633,7 @@ input[type="search"] {
 }
 .form-group {
   margin-bottom: 15px;
+  
 }
 .radio,
 .checkbox {
@@ -2823,6 +2825,7 @@ select[multiple].input-lg {
 .has-success.radio-inline label,
 .has-success.checkbox-inline label {
   color: #3c763d;
+  
 }
 .has-success .form-control {
   border-color: #3c763d;

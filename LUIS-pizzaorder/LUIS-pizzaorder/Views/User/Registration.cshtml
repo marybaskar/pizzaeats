@@ -35,7 +35,7 @@ else
                 @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" , @placeholder = "User Name" })
                     @Html.ValidationMessage("UsernameExist", new { @class = "text-danger" })
                 </div>
             </div>

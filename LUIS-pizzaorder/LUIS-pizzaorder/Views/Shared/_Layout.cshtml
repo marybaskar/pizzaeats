@@ -23,12 +23,13 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Place Order", "Index", "Home")</li>
+                    <a class="navbar-brand"><img src="~/Content/img/order2.png" alt="login" width="30" height="30" /></a>
                     @if (Session["UserName"] == null)
                     {
                         <li>@Html.ActionLink("Sign Up", "Registration", "User")</li>
-                        <a  class="navbar-brand"><img src="~/Content/img/login_1.png" alt="login" width="20" height="20" /></a>
+                        <a class="navbar-brand"><img src="~/Content/img/login_1.png" alt="login" width="30" height="30" /></a>
                         <li>@Html.ActionLink("Log In", "Login", "User")</li>
-                        <a  class="navbar-brand"><img src="~/Content/img/g-icon.png" alt="login" width="20" height="20" /></a>
+                        <a class="navbar-brand"><img src="~/Content/img/g-icon.png" alt="login" width="25" height="25" /></a>
 
                     }
 

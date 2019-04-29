@@ -299,7 +299,9 @@ namespace LUIS_pizzaorder.Controllers
             }
 
             Session["Pizza"] = orderedPizza.pizza_id.ToString();
-            if (Session["UserID"] != null)
+
+            #region(Order)
+            /*if (Session["UserID"] != null)
             {
                 user_order _Order = new user_order();
                 
@@ -312,7 +314,8 @@ namespace LUIS_pizzaorder.Controllers
                     db.user_order.Add(_Order);
                     db.SaveChanges();
                 }
-            }
+            }*/
+            #endregion
 
             Session["Total"] = total*number;
 

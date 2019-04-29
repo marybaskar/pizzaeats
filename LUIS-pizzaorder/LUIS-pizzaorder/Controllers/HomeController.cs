@@ -77,6 +77,7 @@ namespace LUIS_pizzaorder.Controllers
             }
 
         }
+
         public async Task<ActionResult> Index(string String)
         {
             Query Return = new Query();
@@ -144,9 +145,6 @@ namespace LUIS_pizzaorder.Controllers
 
         }
 
-
-
-
         // Utility
         private static async Task<LUIS> QueryLUIS(string Query)
         {
@@ -168,7 +166,6 @@ namespace LUIS_pizzaorder.Controllers
             }
             return LUISResult;
         }
-
 
         public ActionResult SubmitPizza(string size, string cTopping, string mTopping, string vTopping, string num)
         {
@@ -256,6 +253,7 @@ namespace LUIS_pizzaorder.Controllers
             orderedPizza.meat_topping = toppingMeat;
             orderedPizza.veg_topping = toppingVeg;
             double total = 0;
+
             using (PizzaContext dc = new PizzaContext())
             {
                 dc.pizzas.Add(orderedPizza);
@@ -265,10 +263,8 @@ namespace LUIS_pizzaorder.Controllers
                     .Where(a => a.name == orderedPizza.size)
                     .Select(a => a.price)
                     .SingleOrDefault();
-                //var query = from x in dc.sizes
-                //            where x.name == orderedPizza.size
-                //            select x.price;
                 total += double.Parse(query.ToString());
+
                 if (toppingCheese != null)
                 {
                     var tquery = dc
@@ -278,6 +274,7 @@ namespace LUIS_pizzaorder.Controllers
                     .SingleOrDefault();
                     total += double.Parse(tquery.ToString());
                 }
+
                 if (toppingMeat != null)
                 {
                     var tquery = dc
@@ -287,6 +284,7 @@ namespace LUIS_pizzaorder.Controllers
                     .SingleOrDefault();
                     total += double.Parse(tquery.ToString());
                 }
+
                 if (toppingVeg != null)
                 {
                     var tquery = dc
@@ -296,7 +294,9 @@ namespace LUIS_pizzaorder.Controllers
                      .SingleOrDefault();
                     total += double.Parse(tquery.ToString());
                 }
+
             }
+
             Session["Pizza"] = orderedPizza.pizza_id.ToString();
             if (Session["UserID"] != null)
             {
@@ -305,15 +305,21 @@ namespace LUIS_pizzaorder.Controllers
                 _Order.user_id = Int32.Parse(Session["UserID"].ToString());
                 _Order.pizza_id = orderedPizza.pizza_id;
                 _Order.total = (decimal)total;
+
                 using (User_OrderContext db = new User_OrderContext())
                 {
                     db.user_order.Add(_Order);
                     db.SaveChanges();
-
                 }
             }
+
             ViewBag.Total = total;
 
+            return Json(new { success = true, url=Url.Action("Checkout","Home") },JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Checkout()
+        {
             return View();
         }
 

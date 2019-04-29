@@ -284,8 +284,8 @@
     <Content Include="Views\User\UserDashBoard.cshtml" />
     <Content Include="Views\Home\Topping.cshtml" />
     <Content Include="Views\Home\First.cshtml" />
-    <Content Include="Views\Home\SubmitPizza.cshtml" />
     <Content Include="Views\Home\HomeStart.cshtml" />
+    <Content Include="Views\Home\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

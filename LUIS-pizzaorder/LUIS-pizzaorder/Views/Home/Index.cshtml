@@ -101,18 +101,22 @@
                         	var selectedTopping2 = $("input[name='Topping2']:checked").val();
                         	var selectedTopping3 = $("input[name='Topping3']:checked").val();
                             var selectedNum = $("input[name='Number']:checked").val();
-                            //var numberOfPizza = $("@Model.Number");
+                            
                         	//alert("size: " + selected + " topping: " + selectedTopping + " " + selectedTopping2 + " " + selectedTopping3 );
                         	if (selected) {
-                                alert('Your order has been submitted!');
                                 $.ajax({
                                     type: "POST",
                                     data: { size: selected, cTopping: selectedTopping, mTopping: selectedTopping2, vTopping: selectedTopping3, num: selectedNum },
-                                    url: '@Url.Action("HomeStart", "Home")',
+                                    url: '@Url.Action("SubmitPizza", "Home")',
                                     async: true,
+                                    success: function (data) {
+                                        alert('Your order has been submitted!');
+                                        window.location.href = data.url;
+                                    },
                                     error: function () {
                                         alert('Error Occured');
                                     }
+                                    
                                 });
                             }
                             if (selected == null) { alert('Please enter a size');}

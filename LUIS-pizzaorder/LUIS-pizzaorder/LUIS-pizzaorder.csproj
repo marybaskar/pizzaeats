@@ -217,6 +217,7 @@
     <Content Include="Content\img\log-in-35497__340.png" />
     <Content Include="Content\img\login_1.png" />
     <Content Include="Content\img\login_2.png" />
+    <Content Include="Content\img\new-logo.png" />
     <Content Include="Content\img\piza.png.jpg" />
     <Content Include="Content\img\pizza-icon.png" />
     <Content Include="Content\img\pizza-logo.png" />
@@ -225,9 +226,9 @@
     <Content Include="Content\img\shopping-cart2.png" />
     <Content Include="Content\img\Side-Login.png" />
     <Content Include="Content\img\vector-checkout.png" />
-    <Content Include="Content\img\vector-placeOrder.png" />
+    <Content Include="Content\img\vector-placeO.png" />
     <Content Include="Content\img\vector-signin.png" />
-    <Content Include="Content\img\vector-signUp.png" />
+    <Content Include="Content\img\vector-signU.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

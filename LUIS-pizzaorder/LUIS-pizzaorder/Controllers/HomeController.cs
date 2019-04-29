@@ -252,6 +252,7 @@ namespace LUIS_pizzaorder.Controllers
             orderedPizza.cheese_topping = toppingCheese;
             orderedPizza.meat_topping = toppingMeat;
             orderedPizza.veg_topping = toppingVeg;
+            int number = Int32.Parse(num);
             double total = 0;
 
             using (PizzaContext dc = new PizzaContext())
@@ -313,7 +314,7 @@ namespace LUIS_pizzaorder.Controllers
                 }
             }
 
-            ViewBag.Total = total;
+            Session["Total"] = total*number;
 
             return Json(new { success = true, url=Url.Action("Checkout","Home") },JsonRequestBehavior.AllowGet);
         }

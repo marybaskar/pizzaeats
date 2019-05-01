@@ -46,7 +46,7 @@ namespace LUIS_pizzaorder.Controllers
                     dc.users.Add(newUser);
                     dc.SaveChanges();
                 }
-
+                return RedirectToAction("Login");
             }
             else
             {
@@ -71,7 +71,8 @@ namespace LUIS_pizzaorder.Controllers
                 var v = dc.users.Where(a => a.username == login.username).FirstOrDefault();
                 if(v!=null)
                 {
-                    if(string.Compare(Crypto.Hash(login.password), v.password)==0)
+                    string hashedPassword = Crypto.Hash(login.password);
+                    if (string.Compare(hashedPassword, v.password)==0)
                     {
                         Session["UserID"] = v.user_id.ToString();
                         Session["UserName"] = v.username.ToString();

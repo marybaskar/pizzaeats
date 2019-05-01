@@ -13,7 +13,7 @@
     @using (Html.BeginForm())
     {
         <div class="row">
-            <h3>Please Choose Pizza Number:</h3>
+            <h3>How many pizzas?</h3>
 
 
             <div class="col-md-4">
@@ -34,7 +34,7 @@
         </div>
         <div class="row">
 
-            <h3>Please Choose Pizza Size:</h3>
+            <h3>What size?</h3>
             <div class="col-md-4">
 
                 <label>@Html.RadioButton("Size", "Small") Small &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| $10.00</label>
@@ -49,7 +49,8 @@
             </div>
         </div>
         <div class="row">
-            <h3>Please Choose one or more topping:</h3>
+            <h3>What toppings?</h3>
+            <h4>[You can choose a maximum of 3 toppings]</h4>
 
 
             <div class="col-md-4">
@@ -82,11 +83,11 @@
             <div class="col-md-4">
                 <h4>Vegetable Topping:</h4>
 
-                <label>@Html.RadioButton("Topping3", "Olives") Olives &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.50</label>
+                <label>@Html.RadioButton("Topping3", "Olive") Olive &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.50</label>
                 <br />
                 <label>@Html.RadioButton("Topping3", "Peppers") Peppers &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.50</label>
                 <br />
-                <label>@Html.RadioButton("Topping3", "Mushrooms") Mushrooms &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.50</label>
+                <label>@Html.RadioButton("Topping3", "Mushroom") Mushroom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.50</label>
                 <br />
                 <label>@Html.RadioButton("Topping3", "Spinach") Spinach &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| add $0.50</label>
                 <br />

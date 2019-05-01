@@ -25,14 +25,12 @@
                         <p class="text-center">If you would like to navigate through our site please type the name of the page or click one of these icons below!</p>
                         @using (Html.BeginForm())
                         {
-                            <div class="form-group">
-                                <div class="col-md-offset-2 col-md-10">
+                            
                                     <center>
-                                        @Html.TextBox("String", null, new { @class = "wide", @placeholder = "Search here to navigate through our site!" }) <input type="submit" value="Search" color="#007ad7" id="txt" />
+                                        @Html.TextBox("String", null, new { @class = "wide", @placeholder = "Navigate site using Search Bar!" }) <input type="submit" value="Search" color="#007ad7" id="txt" />
                                     </center>
 
-                                </div>
-                            </div>
+                               
                         }
 
                     </div>

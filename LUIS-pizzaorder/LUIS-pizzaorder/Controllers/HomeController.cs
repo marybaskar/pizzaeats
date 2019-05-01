@@ -235,10 +235,10 @@ namespace LUIS_pizzaorder.Controllers
 
             switch (vTopping)
             {
-                case "Mushrooms":
+                case "Mushroom":
                     toppingVeg = 1;
                     break;
-                case "Olives":
+                case "Olive":
                     toppingVeg = 2;
                     break;
                 case "Peppers":
